@@ -10,16 +10,17 @@ export type CombatAction = {
 };
 
 const DATA = actionsData.combat as CombatAction[];
+const BY_NAME = new Map(DATA.map((a) => [a.name, a]));
 
 export const combatActions = {
   get({ name }: { name: string }): CombatAction {
-    const found = DATA.find((a) => a.name === name);
+    const found = BY_NAME.get(name);
     if (!found) throw new Error(`Unknown combat action: ${name}`);
     return found;
   },
 
   find({ name }: { name: string }): CombatAction | undefined {
-    return DATA.find((a) => a.name === name);
+    return BY_NAME.get(name);
   },
 
   list(): CombatAction[] {

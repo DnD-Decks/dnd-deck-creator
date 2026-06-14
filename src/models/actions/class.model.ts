@@ -9,16 +9,17 @@ export type ClassAction = CombatAction & {
 };
 
 const DATA = actionsData.class as ClassAction[];
+const BY_NAME = new Map(DATA.map((a) => [a.name, a]));
 
 export const classActions = {
   get({ name }: { name: string }): ClassAction {
-    const found = DATA.find((a) => a.name === name);
+    const found = BY_NAME.get(name);
     if (!found) throw new Error(`Unknown class action: ${name}`);
     return found;
   },
 
   find({ name }: { name: string }): ClassAction | undefined {
-    return DATA.find((a) => a.name === name);
+    return BY_NAME.get(name);
   },
 
   list(): ClassAction[] {

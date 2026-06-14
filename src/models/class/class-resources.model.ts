@@ -73,13 +73,12 @@ export function resolveResourcesForLevel(
 ): CharacterResource[] {
   const entry = RAW[characterClass];
   if (!entry) return [];
-  return entry.resources
-    .map((r) => {
-      const rawValue = r.progression[String(level)] ?? 0;
-      const max = resolveMax(rawValue, abilityScores);
-      return { resourceId: r.id, current: max, max };
-    })
-    .filter((r) => r.max > 0);
+  return entry.resources.flatMap((r) => {
+    const rawValue = r.progression[String(level)] ?? 0;
+    const max = resolveMax(rawValue, abilityScores);
+    if (max <= 0) return [];
+    return [{ resourceId: r.id, current: max, max }];
+  });
 }
 
 export function resolveResourceResetOn(

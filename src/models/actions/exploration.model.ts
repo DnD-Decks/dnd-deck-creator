@@ -13,16 +13,17 @@ export type ExplorationAction = {
 };
 
 const DATA = actionsData.exploration as ExplorationAction[];
+const BY_NAME = new Map(DATA.map((a) => [a.name, a]));
 
 export const explorationActions = {
   get({ name }: { name: string }): ExplorationAction {
-    const found = DATA.find((a) => a.name === name);
+    const found = BY_NAME.get(name);
     if (!found) throw new Error(`Unknown exploration action: ${name}`);
     return found;
   },
 
   find({ name }: { name: string }): ExplorationAction | undefined {
-    return DATA.find((a) => a.name === name);
+    return BY_NAME.get(name);
   },
 
   list(): ExplorationAction[] {
