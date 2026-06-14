@@ -1,0 +1,88 @@
+/* landscape orientation — swapped poker dimensions */
+.card {
+  --feat-color: var(--card-blue);
+
+  width: var(--card-height);
+  height: var(--card-width);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--ink-900);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--parchment);
+  font-family: var(--font-display);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.35);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 var(--card-width);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: var(--feat-color);
+  color: var(--text-hi);
+  min-height: 22px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source {
+  font-size: 7px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--text-hi) 65%, transparent);
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+/* ── Type line ───────────────────────────────────────────────────────────── */
+.typeLine {
+  padding: 2px 8px;
+  background: color-mix(in srgb, var(--feat-color) 80%, #000);
+  color: var(--text-hi);
+  font-size: 7.5px;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  min-height: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Text box ────────────────────────────────────────────────────────────── */
+.textBox {
+  flex: 1;
+  padding: 5px 8px 4px;
+  overflow-y: auto;
+  background: var(--parchment);
+  border-top: 1px solid color-mix(in srgb, var(--feat-color) 20%, #8a7a5a);
+  min-height: 0;
+}
+
+@media print {
+  .card {
+    content-visibility: visible;
+  }
+  .textBox {
+    overflow: hidden;
+  }
+}
+
+.textBox p {
+  margin: 0;
+  font-size: 7.5px;
+  line-height: 1.35;
+  color: var(--ink-900);
+}

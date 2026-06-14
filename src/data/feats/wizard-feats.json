@@ -1,0 +1,20 @@
+[
+  {
+    "id": "wizard-spellcasting",
+    "name": "Spellcasting",
+    "source": "Wizard Level 1",
+    "description": "You can cast wizard spells using Intelligence as your spellcasting ability. Prepare a number of spells equal to your Intelligence modifier + your Wizard level after each Long Rest. You may use an arcane focus or component pouch as a spellcasting focus."
+  },
+  {
+    "id": "wizard-ritual-adept",
+    "name": "Ritual Adept",
+    "source": "Wizard Level 1",
+    "description": "You can cast any spell as a ritual if it has the Ritual tag and it is in your spellbook. You need not have the spell prepared."
+  },
+  {
+    "id": "wizard-arcane-recovery",
+    "name": "Arcane Recovery",
+    "source": "Wizard Level 1",
+    "description": "Once per Long Rest, when you finish a Short Rest, you can recover expended spell slots. The total level of the recovered slots cannot exceed half your Wizard level (rounded up). None of the recovered slots can be level 6 or higher."
+  }
+]
