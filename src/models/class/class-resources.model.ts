@@ -17,7 +17,6 @@ export type ResourceDefinition = {
   id: ResourceId;
   name: string;
   description: string;
-  icon: string;
 };
 
 export type CharacterResource = {
@@ -33,7 +32,6 @@ type RawResourceEntry = {
   name: string;
   description: string;
   resetOn: RestType;
-  icon: string;
   progression: Record<string, ProgressionValue>;
 };
 
@@ -52,7 +50,6 @@ for (const classEntry of Object.values(RAW)) {
         id: r.id,
         name: r.name,
         description: r.description,
-        icon: r.icon,
       };
       ALL_DEFS.push(def);
       BY_RESOURCE_ID.set(r.id, def);

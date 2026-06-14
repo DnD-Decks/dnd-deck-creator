@@ -5,7 +5,6 @@ export type ActionTiming = "action" | "bonus-action" | "reaction";
 export type CombatAction = {
   name: string;
   timing: ActionTiming;
-  icon?: string;
   description: string;
 };
 

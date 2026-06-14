@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { test } from "node:test";
+import { test } from "vitest";
 
 import {
   classResources,
@@ -25,7 +25,6 @@ test("get rage returns correct definition", () => {
   const r = classResources.get({ id: "rage" });
   assert.equal(r.id, "rage");
   assert.equal(r.name, "Rage");
-  assert.ok(r.icon, "missing icon");
 });
 
 test("get throws on unknown resource", () => {

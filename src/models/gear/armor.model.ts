@@ -26,7 +26,6 @@ export type Armor = {
   maxDexModifier: number | null;
   requiredStr: number | null;
   stealthDisadvantage: boolean;
-  icon: string;
 };
 
 const DATA = armorData as Armor[];

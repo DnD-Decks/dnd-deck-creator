@@ -7,7 +7,6 @@ export type ExplorationCategory = "exploration" | "social";
 export type ExplorationAction = {
   name: string;
   category: ExplorationCategory;
-  icon?: string;
   description: string;
   classificationRestriction?: ManualClassification[];
 };

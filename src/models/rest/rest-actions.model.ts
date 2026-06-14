@@ -5,7 +5,6 @@ export type RestType = "short-rest" | "long-rest";
 export type RestAction = {
   id: RestType;
   label: string;
-  icon: string;
   description: string;
 };
 

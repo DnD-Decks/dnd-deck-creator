@@ -7,10 +7,9 @@ import type { ProficiencyKey } from "src/models/class/classes.model";
 export type ProficiencyDetails = {
   id: ProficiencyKey;
   label: string;
-  icon: string;
 };
 
-// Raw JSON is a Record<ProficiencyKey, {label, icon}> without the id field; inject from key.
+// Raw JSON is a superset (includes icon); inject id from key.
 type RawProficiency = Omit<ProficiencyDetails, "id">;
 const RAW = proficiencyData as Record<ProficiencyKey, RawProficiency>;
 

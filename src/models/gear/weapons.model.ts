@@ -54,7 +54,6 @@ export type Weapon = {
   damage: { dice: string; type: DamageType };
   properties: string[];
   mastery: WeaponMasteryName;
-  icon: string;
 };
 
 const DATA = weaponsData as Weapon[];
