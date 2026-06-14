@@ -6,14 +6,30 @@
 
 **Card categories per deck:**
 
-| Category | One card per… | Example |
-|---|---|---|
-| Spell slot | Available slot level | "Level 1 Slot ×4" |
-| Class feature / feat | Named class ability | "Arcane Recovery" |
-| Spell | Spell in the class's spell list | "Fireball" (Wizard) |
-| Companion stats | Companion / familiar stat block | Ranger's beast companion |
+| Category | Kind | Layout | Status | Example |
+|---|---|---|---|---|
+| Resource | `resource` | vertical | ✓ Wizard L1, Fighter L1 | "Mana ×2", "Second Wind ×1" |
+| Class feature / feat | `feat` | horizontal (landscape) | ✓ Wizard L1, Fighter L1 | "Arcane Recovery", "Fighting Style" |
+| Spell | `spell` | vertical | ✓ all caster classes (L1 only) | "Fireball" (Wizard) |
+| Weapon mastery | `weapon-mastery` | vertical (spell layout) | ✓ Fighter L1 (all 8 properties) | "Cleave", "Graze" |
+| Companion stats | `companion` | — | deferred | Ranger's beast companion |
 
 > Spells shared between classes are **intentionally duplicated** per deck: visual class identity is expressed in card style, not shared components.
+
+> **Spell scope (level-1 decks):** decks currently show cantrips + level-1 spells only. Level-2+ spells are in `src/data/spells/` but excluded from deck composition (`SPELL_LEVELS = [0, 1]` in `deck.model.ts`).
+
+> **Section order within a deck:** Resources → Class Features → Spells (Cantrips, Level 1, …) → Weapon Masteries. Insertion order in `decks.get()` drives the grouping in `DeckView`.
+
+---
+
+## Adding a new card kind
+
+1. Author JSON in `src/data/<domain>/`.
+2. Create model `src/models/<domain>/<domain>.model.ts` exporting a single object with `findAll({cls})`.
+3. Add a new union arm to `DeckCard` in `src/decks/deck.model.ts`.
+4. Assemble cards in `decks.get()` in the desired section order.
+5. Add arms to the three `switch(card.kind)` functions in `src/decks/deck-view.component.tsx` (`sectionLabel`, `cardKey`, `renderCard`). The `assertNever` default guards make missing arms compile errors.
+6. Create `src/cards/<kind>-card.component.tsx` + CSS module.
 
 ---
 
@@ -24,36 +40,39 @@ Cards are React components with **fixed physical proportions** — the goal is W
 - Reference size: **63.5 × 88.9 mm** (standard poker card).
     - Screen view: grid of cards at a comfortable reading scale.
     - Print view: `@media print` overrides — mm units, bleed/cut margins, page breaks between decks.
-
-Each class deck is composed in `src/decks/<class>/index.tsx`.
+- **Horizontal feat cards** swap dimensions: `width: var(--card-height); height: var(--card-width)`.
+- **Weapon-mastery cards** reuse `spell-card.module.css` directly (same-folder relative import), overriding `--school-color` via inline style.
+- Use semantic HTML (`<article>`, `<h3>`) so cards are role-queryable in RTL tests.
 
 ---
 
 ## Data source
 
-JSON vendored from sibling repo [`dnd-beginner-character-sheet-5e-2024/src/data`](https://github.com/manuartero/dnd-beginner-character-sheet-5e-2024/tree/main/src/data) into `src/data/` (same relative paths).
+JSON for spells is vendored from sibling repo [`dnd-beginner-character-sheet-5e-2024/src/data`](https://github.com/manuartero/dnd-beginner-character-sheet-5e-2024/tree/main/src/data). Class features, resources, and weapon masteries are authored by hand in this repo.
 
-### Vendored files (✓ present locally)
+### Present data
 
-| File | Contents |
+| Path | Contents |
 |---|---|
 | `spells/spells-level-0.json` | 33 cantrips, keyed by id |
 | `spells/spells-level-1.json` | 54 level-1 spells, keyed by id |
-| `spells/wizard-spells.json` | Wizard spell id lists (cantrips, level1, level2) |
-| `classes/<cls>.json` | One file per class (12 total): label, icon, hitDie, saves, proficiencies |
+| `spells/spells-level-2.json` | 35 level-2 spells, keyed by id (vendored; not in L1 decks) |
+| `spells/{class}-spells.json` | Spell id lists for 8 caster classes |
+| `classes/<cls>.json` | 12 class files: label, icon, hitDie, saves, proficiencies |
+| `resources/wizard-resources.json` | Wizard L1 resource: Mana (2 spell slots) |
+| `resources/fighter-resources.json` | Fighter L1 resource: Second Wind |
+| `feats/wizard-feats.json` | Wizard L1 features: Spellcasting, Ritual Adept, Arcane Recovery |
+| `feats/fighter-feats.json` | Fighter L1 features: Fighting Style, Weapon Mastery |
+| `weapon-masteries/weapon-masteries.json` | All 8 PHB 2024 mastery properties (class-agnostic) |
 
-### Deferred files (not yet vendored)
+### Deferred
 
-| File | Contents |
+| Path | Contents |
 |---|---|
-| `spells/spells-level-2.json` | Level-2 spells |
-| `spells/{class}-spells.json` | Spell id lists for the other 11 classes |
 | `common/` | Abilities, actions, gear |
 | `origin/` | Backgrounds, origin feats, species |
 
-> **Data import mechanism: deferred.** When ready, add a `scripts/fetch-data.mjs` (zero deps, Node built-in fetch) that downloads the JSON files from the sibling repo's `main` branch into `src/data/`.
-
-> **Level progression (spell slots, resource tracks):** vendoring and modelling is deferred. Re-vendor `class/class-resources.json` from the sibling repo and add `src/models/class/class-resources.model.ts` when the deck needs it.
+> **Data import mechanism:** when vendoring more spells, add a `scripts/fetch-data.mjs` (zero deps, Node built-in fetch) that downloads JSON from the sibling repo's `main` branch into `src/data/`.
 
 ### Spell record shape
 
@@ -73,21 +92,6 @@ type Spell = {
   save?: string;
   damage?: { dice: string; type: string[] };
   icon?: string;        // sprite ref e.g. "vol3/icon-vol3_20"
-};
-```
-
-### Class detail record shape (excerpt)
-
-```ts
-type ClassDetails = {
-  id: CharacterClass;
-  label: string;
-  icon: string;
-  hitDie: string;       // "d6" | "d8" | "d10" | "d12"
-  saves: string;
-  description: string;
-  manualClassification: "martial" | "spell-caster" | "versatile";
-  proficiencies: { /* armor, weapon, skill options */ };
 };
 ```
 
@@ -118,7 +122,10 @@ Current modules:
 
 | Module | Exports |
 |---|---|
-| `src/models/spells/spells.model.ts` | `spells` — cantrips + lvl-1 spells; `findAll({cls, level})` |
+| `src/models/spells/spells.model.ts` | `spells` — cantrips + lvl-1+2 spells; `findAll({cls, level})` |
 | `src/models/class/classes.model.ts` | `classes` — all 12 PHB class details |
+| `src/models/resources/resources.model.ts` | `resources` — class resources; `findAll({cls})` |
+| `src/models/feats/feats.model.ts` | `feats` — class features; `findAll({cls})` |
+| `src/models/weapon-masteries/weapon-masteries.model.ts` | `weaponMasteries` — mastery properties; `findAll({cls})`, `list()` |
 
 Conventions follow [`dnd-beginner-character-sheet-5e-2024/src/models/CLAUDE.md`](https://github.com/manuartero/dnd-beginner-character-sheet-5e-2024/blob/main/src/models/CLAUDE.md).

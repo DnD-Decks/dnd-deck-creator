@@ -1,0 +1,94 @@
+/* Physical card — poker size, tokens from global.css */
+.card {
+  --resource-color: var(--gold);
+
+  width: var(--card-width);
+  height: var(--card-height);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--ink-900);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--parchment);
+  font-family: var(--font-display);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.35);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 var(--card-height);
+}
+
+/* ── Title bar ───────────────────────────────────────────────────────────── */
+.titleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px 4px 8px;
+  background: var(--resource-color);
+  color: var(--ink-900);
+  min-height: 22px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.usesBadge {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--ink-900);
+  flex-shrink: 0;
+  margin-left: 6px;
+}
+
+/* ── Meta line ───────────────────────────────────────────────────────────── */
+.metaLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 8px;
+  background: color-mix(in srgb, var(--resource-color) 80%, #000);
+  color: var(--text-hi);
+  font-size: 7.5px;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  min-height: 16px;
+  flex-shrink: 0;
+}
+
+/* ── Text box ────────────────────────────────────────────────────────────── */
+.textBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 8px 4px;
+  overflow-y: auto;
+  background: var(--parchment);
+  border-top: 1px solid color-mix(in srgb, var(--resource-color) 20%, #8a7a5a);
+  gap: 4px;
+  min-height: 0;
+}
+
+@media print {
+  .card {
+    content-visibility: visible;
+  }
+  .textBox {
+    overflow: hidden;
+  }
+}
+
+.textBox p {
+  margin: 0;
+  font-size: 7.5px;
+  line-height: 1.35;
+  color: var(--ink-900);
+  flex: 1;
+}

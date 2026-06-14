@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fighter-fighting-style",
+    "name": "Fighting Style",
+    "source": "Fighter Level 1",
+    "description": "You adopt a particular style of fighting. Choose one Fighting Style feat (e.g. Archery, Defense, Dueling, Great Weapon Fighting, Protection, Two-Weapon Fighting). You can replace your style whenever you gain a Fighter level."
+  },
+  {
+    "id": "fighter-weapon-mastery",
+    "name": "Weapon Mastery",
+    "source": "Fighter Level 1",
+    "description": "Your training allows you to use the mastery property of 3 weapons you are proficient with. You can change which weapons you use this with after a Long Rest. See Weapon Mastery cards for property details."
+  }
+]
