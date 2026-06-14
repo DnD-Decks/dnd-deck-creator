@@ -25,8 +25,6 @@ export type CharacterResource = {
   max: number;
 };
 
-// --- Internal raw types ---
-
 type RawResourceEntry = {
   id: ResourceId;
   name: string;
@@ -43,8 +41,13 @@ const RAW = classResourcesData as Record<CharacterClass, RawClassEntry>;
 const ALL_DEFS: ResourceDefinition[] = [];
 const BY_RESOURCE_ID = new Map<ResourceId, ResourceDefinition>();
 
-for (const classEntry of Object.values(RAW)) {
+for (const [className, classEntry] of Object.entries(RAW)) {
+  if (!Array.isArray(classEntry.resources)) {
+    throw new Error(`class-resources.json: missing "resources" array for class "${className}"`);
+  }
   for (const r of classEntry.resources) {
+    if (!r.id)
+      throw new Error(`class-resources.json: resource entry missing "id" in class "${className}"`);
     if (!BY_RESOURCE_ID.has(r.id)) {
       const def: ResourceDefinition = {
         id: r.id,
@@ -57,10 +60,18 @@ for (const classEntry of Object.values(RAW)) {
   }
 }
 
+const ABILITY_MOD_MAP: Record<AbilityModKey, AbilityName> = {
+  "str-mod": "str",
+  "dex-mod": "dex",
+  "con-mod": "con",
+  "int-mod": "int",
+  "wis-mod": "wis",
+  "cha-mod": "cha",
+};
+
 function resolveMax(value: ProgressionValue, scores: AbilityScores): number {
   if (typeof value === "number") return value;
-  const abilityName = value.replace("-mod", "") as AbilityName;
-  return Math.max(1, computeModifier(scores[abilityName]));
+  return Math.max(1, computeModifier(scores[ABILITY_MOD_MAP[value]]));
 }
 
 export function resolveResourcesForLevel(
@@ -68,9 +79,13 @@ export function resolveResourcesForLevel(
   level: number,
   abilityScores: AbilityScores
 ): CharacterResource[] {
+  if (!Number.isInteger(level) || level < 1 || level > 20) {
+    throw new Error(`resolveResourcesForLevel: level must be an integer 1–20, got ${level}`);
+  }
   const entry = RAW[characterClass];
-  if (!entry) return [];
+  if (!entry) throw new Error(`resolveResourcesForLevel: no data for class "${characterClass}"`);
   return entry.resources.flatMap((r) => {
+    // Progression tables currently cover levels 1–5; missing keys return [] (data not yet added).
     const rawValue = r.progression[String(level)] ?? 0;
     const max = resolveMax(rawValue, abilityScores);
     if (max <= 0) return [];
@@ -83,7 +98,8 @@ export function resolveResourceResetOn(
   resourceId: ResourceId
 ): RestType {
   const entry = RAW[characterClass];
-  const resource = entry?.resources.find((r) => r.id === resourceId);
+  if (!entry) throw new Error(`resolveResourceResetOn: unknown class "${characterClass}"`);
+  const resource = entry.resources.find((r) => r.id === resourceId);
   if (!resource) throw new Error(`Unknown resource "${resourceId}" for class "${characterClass}"`);
   return resource.resetOn;
 }

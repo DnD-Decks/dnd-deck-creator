@@ -1,17 +1,18 @@
-// Runtime imports are relative with .ts extension so node:test can resolve them
 import fighterResourcesData from "../../data/resources/fighter-resources.json" with {
   type: "json",
 };
 import wizardResourcesData from "../../data/resources/wizard-resources.json" with { type: "json" };
 
+import type { ActionTiming } from "src/models/actions/combat.model";
 import type { CharacterClass } from "src/models/class/classes.model";
+import type { RestType } from "src/models/rest/rest-actions.model";
 
 export type Resource = {
   id: string;
   name: string;
   uses: number;
-  recharge: "Short Rest" | "Long Rest";
-  action?: "Action" | "Bonus Action" | "Reaction";
+  recharge: RestType;
+  action?: ActionTiming;
   description: string;
   icon?: string;
 };

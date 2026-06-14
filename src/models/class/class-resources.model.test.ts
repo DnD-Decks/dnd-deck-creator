@@ -143,3 +143,30 @@ test("paladin spell-slot-1st is 0 at L1 (not yet available)", () => {
   assert.ok(loh !== undefined);
   assert.equal(loh.max, 5);
 });
+
+test("resolveResourcesForLevel throws for invalid level (0)", () => {
+  assert.throws(
+    () => resolveResourcesForLevel("barbarian", 0, DEFAULT_SCORES),
+    /level must be an integer 1–20/
+  );
+});
+
+test("resolveResourcesForLevel throws for unknown class", () => {
+  assert.throws(
+    () => resolveResourcesForLevel("artificer" as "barbarian", 1, DEFAULT_SCORES),
+    /no data for class/
+  );
+});
+
+test("resolveResourceResetOn throws for unknown class", () => {
+  assert.throws(() => resolveResourceResetOn("artificer" as "barbarian", "rage"), /unknown class/);
+});
+
+test("bard bardic-inspiration with neutral cha (score 10) is floored at 1", () => {
+  // cha=10 → modifier=0 → resolveMax returns max(1, 0) = 1
+  const neutralCha: AbilityScores = { ...DEFAULT_SCORES, cha: 10 };
+  const resources = resolveResourcesForLevel("bard", 1, neutralCha);
+  const inspiration = resources.find((r) => r.resourceId === "bardic-inspiration");
+  assert.ok(inspiration !== undefined);
+  assert.equal(inspiration.max, 1);
+});

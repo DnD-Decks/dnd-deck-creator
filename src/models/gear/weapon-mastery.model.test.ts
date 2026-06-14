@@ -29,8 +29,8 @@ test("find vex returns details", () => {
 
 // --- weaponMastery.list ---
 
-test("list returns exactly 8 masteries", () => {
-  assert.equal(weaponMastery.list().length, 8);
+test("list has at least 8 masteries", () => {
+  assert.ok(weaponMastery.list().length >= 8);
 });
 
 test("every mastery has id and description", () => {

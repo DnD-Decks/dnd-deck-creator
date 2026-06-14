@@ -9,7 +9,6 @@ export type AbilityDetails = {
   short: string;
 };
 
-// Standard D&D 5e ability score modifier: floor((score - 10) / 2).
 export function computeModifier(score: number): number {
   return Math.floor((score - 10) / 2);
 }

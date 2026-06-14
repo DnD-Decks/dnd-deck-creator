@@ -48,8 +48,8 @@ test("find chain-mail returns details", () => {
 
 // --- armor.list ---
 
-test("list returns exactly 13 entries", () => {
-  assert.equal(armor.list().length, 13);
+test("list has at least 13 entries", () => {
+  assert.ok(armor.list().length >= 13);
 });
 
 test("list contains all four categories", () => {

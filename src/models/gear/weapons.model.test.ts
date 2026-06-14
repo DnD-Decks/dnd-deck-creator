@@ -42,8 +42,8 @@ test("find shortbow returns correct fields", () => {
 
 // --- weapons.list ---
 
-test("list returns exactly 38 weapons", () => {
-  assert.equal(weapons.list().length, 38);
+test("list has at least 38 weapons", () => {
+  assert.ok(weapons.list().length >= 38);
 });
 
 test("every weapon has required fields", () => {

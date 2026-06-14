@@ -2,6 +2,7 @@ import weaponsData from "../../data/gear/weapons.json" with { type: "json" };
 
 import type { DamageType } from "src/models/damage/damage-types.model";
 import type { WeaponMasteryName } from "src/models/gear/weapon-mastery.model";
+import type { WeaponPropertyId } from "src/models/gear/weapon-properties.model";
 
 export type WeaponProficiency = "simple" | "martial";
 export type WeaponRange = "melee" | "ranged";
@@ -52,7 +53,7 @@ export type Weapon = {
   proficiency: WeaponProficiency;
   range: WeaponRange;
   damage: { dice: string; type: DamageType };
-  properties: string[];
+  properties: WeaponPropertyId[];
   mastery: WeaponMasteryName;
 };
 

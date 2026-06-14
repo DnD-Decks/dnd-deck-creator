@@ -17,16 +17,18 @@ export type ArmorId =
   | "plate-armor"
   | "shield";
 
+type ArmorDexBonusCap =
+  | { dexModifier: false; maxDexModifier: null }
+  | { dexModifier: true; maxDexModifier: number | null };
+
 export type Armor = {
   id: ArmorId;
   name: string;
   category: ArmorCategory;
   baseAc: number;
-  dexModifier: boolean;
-  maxDexModifier: number | null;
   requiredStr: number | null;
   stealthDisadvantage: boolean;
-};
+} & ArmorDexBonusCap;
 
 const DATA = armorData as Armor[];
 const BY_ID = new Map(DATA.map((a) => [a.id, a]));

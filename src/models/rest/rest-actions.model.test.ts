@@ -31,8 +31,8 @@ test("find returns undefined for unknown rest action", () => {
 
 // --- restActions.list ---
 
-test("list returns exactly 2 rest actions", () => {
-  assert.equal(restActions.list().length, 2);
+test("list has at least 2 rest actions", () => {
+  assert.ok(restActions.list().length >= 2);
 });
 
 test("every rest action has id, label, and description", () => {

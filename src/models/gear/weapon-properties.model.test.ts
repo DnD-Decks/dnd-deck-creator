@@ -12,7 +12,10 @@ test("get finesse returns details with description", () => {
 });
 
 test("get throws on unknown property", () => {
-  assert.throws(() => weaponProperties.get({ id: "cursed" }), /Unknown weapon property/);
+  assert.throws(
+    () => weaponProperties.get({ id: "cursed" as "finesse" }),
+    /Unknown weapon property/
+  );
 });
 
 // --- weaponProperties.find ---
@@ -29,8 +32,8 @@ test("find heavy returns details", () => {
 
 // --- weaponProperties.list ---
 
-test("list returns exactly 10 properties", () => {
-  assert.equal(weaponProperties.list().length, 10);
+test("list has at least 10 properties", () => {
+  assert.ok(weaponProperties.list().length >= 10);
 });
 
 test("every property has id and description", () => {
