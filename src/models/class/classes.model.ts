@@ -11,6 +11,16 @@ import sorcererData from "../../data/classes/sorcerer.json" with { type: "json" 
 import warlockData from "../../data/classes/warlock.json" with { type: "json" };
 import wizardData from "../../data/classes/wizard.json" with { type: "json" };
 
+export type ManualClassification = "martial" | "spell-caster" | "versatile";
+
+export type ProficiencyKey =
+  | "light-armor"
+  | "medium-armor"
+  | "heavy-armor"
+  | "shields"
+  | "simple-weapons"
+  | "martial-weapons";
+
 export type CharacterClass =
   | "barbarian"
   | "bard"
@@ -32,14 +42,8 @@ export type ClassDetails = {
   hitDie: string;
   saves: string;
   description: string;
-  manualClassification: "martial" | "spell-caster" | "versatile";
-  proficiencies: {
-    "light-armor": boolean;
-    "medium-armor": boolean;
-    "heavy-armor": boolean;
-    shields: boolean;
-    "simple-weapons": boolean;
-    "martial-weapons": boolean;
+  manualClassification: ManualClassification;
+  proficiencies: Record<ProficiencyKey, boolean> & {
     skills: { n: number; options: string[] };
   };
 };

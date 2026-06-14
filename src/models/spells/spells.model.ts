@@ -11,6 +11,7 @@ import warlockSpellsData from "../../data/spells/warlock-spells.json" with { typ
 import wizardSpellsData from "../../data/spells/wizard-spells.json" with { type: "json" };
 
 import type { CharacterClass } from "src/models/class/classes.model";
+import type { DamageType } from "src/models/damage/damage-types.model";
 
 export type SpellLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
@@ -27,7 +28,7 @@ export type Spell = {
   ritual: boolean;
   description: string;
   save?: string;
-  damage?: { dice: string; type: string[] };
+  damage?: { dice: string; type: DamageType[] };
   icon?: string;
 };
 
