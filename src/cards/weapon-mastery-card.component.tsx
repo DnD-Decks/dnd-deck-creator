@@ -4,12 +4,13 @@ import styles from "./spell-card.module.css";
 
 type Props = { mastery: WeaponMastery };
 
+const MASTERY_STYLE = {
+  "--school-color": "var(--school-transmutation)",
+} as React.CSSProperties;
+
 export function WeaponMasteryCard({ mastery }: Props) {
   return (
-    <article
-      className={styles.card}
-      style={{ "--school-color": "var(--school-transmutation)" } as React.CSSProperties}
-    >
+    <article className={styles.card} style={MASTERY_STYLE}>
       <div className={styles.titleBar}>
         <h3 className={styles.name}>{mastery.name}</h3>
       </div>
