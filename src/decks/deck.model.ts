@@ -20,7 +20,6 @@ export type DeckCard =
 
 export type Deck = { cls: ClassDetails; cards: DeckCard[] };
 
-// Level-1 decks: cantrips + level-1 spells only.
 const SPELL_LEVELS: SpellLevel[] = [0, 1];
 
 // Decks are pure over static JSON, so each class is assembled at most once.
@@ -31,7 +30,6 @@ export const decks = {
     const cached = CACHE.get(cls);
     if (cached) return cached;
 
-    // Section order: Resources → Class Features → Spells → Weapon Masteries
     const resourceCards: DeckCard[] = resources
       .findAll({ cls })
       .map((resource): DeckCard => ({ kind: "resource", resource }));

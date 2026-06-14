@@ -1,8 +1,8 @@
-/* Class feature card — landscape (horizontal) layout, swapped poker dimensions */
+/* landscape orientation — swapped poker dimensions */
 .card {
   --feat-color: var(--card-blue);
 
-  width: var(--card-height); /* landscape: long edge is the width */
+  width: var(--card-height);
   height: var(--card-width);
   display: flex;
   flex-direction: column;

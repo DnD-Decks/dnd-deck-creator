@@ -12,8 +12,7 @@ export type WeaponMastery = {
 
 const ALL: WeaponMastery[] = masteriesData as WeaponMastery[];
 
-// Fighter gets all 8 mastery properties at level 1.
-// Other classes have no mastery cards.
+// D&D 2024: only Fighter has Weapon Mastery at level 1
 const MASTERY_CLASSES = new Set<CharacterClass>(["fighter"]);
 
 export const weaponMasteries = {

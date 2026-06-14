@@ -1,5 +1,5 @@
 import type { WeaponMastery } from "src/models/weapon-masteries/weapon-masteries.model";
-// Reuse spell-card layout; override the school color to a martial amber tone.
+// borrows spell-card stylesheet; no dedicated weapon-mastery layout exists yet
 import styles from "./spell-card.module.css";
 
 type Props = { mastery: WeaponMastery };

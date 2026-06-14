@@ -10,8 +10,8 @@ export type Resource = {
   id: string;
   name: string;
   uses: number;
-  recharge: string;
-  action?: string;
+  recharge: "Short Rest" | "Long Rest";
+  action?: "Action" | "Bonus Action" | "Reaction";
   description: string;
   icon?: string;
 };
