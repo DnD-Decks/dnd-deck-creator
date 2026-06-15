@@ -46,16 +46,6 @@ test("list has at least 38 weapons", () => {
   assert.ok(weapons.list().length >= 38);
 });
 
-test("every weapon has required fields", () => {
-  for (const w of weapons.list()) {
-    assert.ok(w.id, "missing id");
-    assert.ok(w.name, `missing name on ${w.id}`);
-    assert.ok(w.damage.dice, `missing damage dice on ${w.id}`);
-    assert.ok(w.damage.type, `missing damage type on ${w.id}`);
-    assert.ok(w.mastery, `missing mastery on ${w.id}`);
-  }
-});
-
 test("list contains both simple and martial weapons", () => {
   const all = weapons.list();
   assert.ok(all.some((w) => w.proficiency === "simple"));

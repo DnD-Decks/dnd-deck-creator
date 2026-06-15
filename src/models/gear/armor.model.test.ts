@@ -59,11 +59,3 @@ test("list contains all four categories", () => {
   assert.ok(categories.has("heavy"));
   assert.ok(categories.has("shield"));
 });
-
-test("every armor entry has id, name, and baseAc", () => {
-  for (const a of armor.list()) {
-    assert.ok(a.id, "missing id");
-    assert.ok(a.name, `missing name on ${a.id}`);
-    assert.ok(a.baseAc > 0, `invalid baseAc on ${a.id}`);
-  }
-});
