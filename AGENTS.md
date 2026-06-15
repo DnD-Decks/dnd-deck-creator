@@ -32,6 +32,7 @@
 - **Lint/format**: biome.
 - **Package manager**: pnpm.
 - **Minimize dependencies**: every new `dependency` or `devDependency` must be justified. Prefer solving in userland before reaching for a package.
+- **Exact versions only**: never `^`/`~` ranges in `package.json`. `.npmrc` sets `save-exact=true` so `pnpm add` does this automatically.
 - **Composite check**: `pnpm blue-ball` = lint + test + build. Run before pushing.
 
 ### Testing
