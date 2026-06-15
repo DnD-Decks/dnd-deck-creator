@@ -18,19 +18,19 @@
     "blue-ball": "biome check . && vitest run && tsc -b && vite build"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@testing-library/react": "^16.0.0",
-    "@types/node": "^25.9.1",
-    "@types/react": "^19.1.5",
-    "@types/react-dom": "^19.1.5",
-    "@vitejs/plugin-react": "^4.5.2",
-    "jsdom": "^26.0.0",
-    "vitest": "^3.0.0",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "@biomejs/biome": "1.9.4",
+    "@testing-library/react": "16.3.2",
+    "@types/node": "25.9.1",
+    "@types/react": "19.2.16",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "4.7.0",
+    "jsdom": "26.1.0",
+    "vitest": "3.2.6",
+    "typescript": "5.9.3",
+    "vite": "6.4.3"
   }
 }
