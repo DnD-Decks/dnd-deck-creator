@@ -1,0 +1,856 @@
+[
+  {
+    "id": "acid-splash",
+    "type": "spell",
+    "name": "Acid Splash",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "blade-ward",
+    "type": "spell",
+    "name": "Blade Ward",
+    "school": "abjuration",
+    "level": 0
+  },
+  {
+    "id": "chill-touch",
+    "type": "spell",
+    "name": "Chill Touch",
+    "school": "necromancy",
+    "level": 0
+  },
+  {
+    "id": "dancing-lights",
+    "type": "spell",
+    "name": "Dancing Lights",
+    "school": "illusion",
+    "level": 0
+  },
+  {
+    "id": "druidcraft",
+    "type": "spell",
+    "name": "Druidcraft",
+    "school": "transmutation",
+    "level": 0
+  },
+  {
+    "id": "eldritch-blast",
+    "type": "spell",
+    "name": "Eldritch Blast",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "elementalism",
+    "type": "spell",
+    "name": "Elementalism",
+    "school": "transmutation",
+    "level": 0
+  },
+  {
+    "id": "fire-bolt",
+    "type": "spell",
+    "name": "Fire Bolt",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "friends",
+    "type": "spell",
+    "name": "Friends",
+    "school": "enchantment",
+    "level": 0
+  },
+  {
+    "id": "guidance",
+    "type": "spell",
+    "name": "Guidance",
+    "school": "divination",
+    "level": 0
+  },
+  {
+    "id": "light",
+    "type": "spell",
+    "name": "Light",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "mage-hand",
+    "type": "spell",
+    "name": "Mage Hand",
+    "school": "conjuration",
+    "level": 0
+  },
+  {
+    "id": "mending",
+    "type": "spell",
+    "name": "Mending",
+    "school": "transmutation",
+    "level": 0
+  },
+  {
+    "id": "message",
+    "type": "spell",
+    "name": "Message",
+    "school": "transmutation",
+    "level": 0
+  },
+  {
+    "id": "mind-sliver",
+    "type": "spell",
+    "name": "Mind Sliver",
+    "school": "enchantment",
+    "level": 0
+  },
+  {
+    "id": "minor-illusion",
+    "type": "spell",
+    "name": "Minor Illusion",
+    "school": "illusion",
+    "level": 0
+  },
+  {
+    "id": "poison-spray",
+    "type": "spell",
+    "name": "Poison Spray",
+    "school": "necromancy",
+    "level": 0
+  },
+  {
+    "id": "prestidigitation",
+    "type": "spell",
+    "name": "Prestidigitation",
+    "school": "transmutation",
+    "level": 0
+  },
+  {
+    "id": "produce-flame",
+    "type": "spell",
+    "name": "Produce Flame",
+    "school": "conjuration",
+    "level": 0
+  },
+  {
+    "id": "ray-of-frost",
+    "type": "spell",
+    "name": "Ray of Frost",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "resistance",
+    "type": "spell",
+    "name": "Resistance",
+    "school": "abjuration",
+    "level": 0
+  },
+  {
+    "id": "sacred-flame",
+    "type": "spell",
+    "name": "Sacred Flame",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "shillelagh",
+    "type": "spell",
+    "name": "Shillelagh",
+    "school": "transmutation",
+    "level": 0
+  },
+  {
+    "id": "shocking-grasp",
+    "type": "spell",
+    "name": "Shocking Grasp",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "sorcerous-burst",
+    "type": "spell",
+    "name": "Sorcerous Burst",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "spare-the-dying",
+    "type": "spell",
+    "name": "Spare the Dying",
+    "school": "necromancy",
+    "level": 0
+  },
+  {
+    "id": "starry-wisp",
+    "type": "spell",
+    "name": "Starry Wisp",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "thaumaturgy",
+    "type": "spell",
+    "name": "Thaumaturgy",
+    "school": "transmutation",
+    "level": 0
+  },
+  {
+    "id": "thorn-whip",
+    "type": "spell",
+    "name": "Thorn Whip",
+    "school": "transmutation",
+    "level": 0
+  },
+  {
+    "id": "thunderclap",
+    "type": "spell",
+    "name": "Thunderclap",
+    "school": "evocation",
+    "level": 0
+  },
+  {
+    "id": "toll-the-dead",
+    "type": "spell",
+    "name": "Toll the Dead",
+    "school": "necromancy",
+    "level": 0
+  },
+  {
+    "id": "true-strike",
+    "type": "spell",
+    "name": "True Strike",
+    "school": "divination",
+    "level": 0
+  },
+  {
+    "id": "vicious-mockery",
+    "type": "spell",
+    "name": "Vicious Mockery",
+    "school": "enchantment",
+    "level": 0
+  },
+  {
+    "id": "alarm",
+    "type": "spell",
+    "name": "Alarm",
+    "school": "abjuration",
+    "level": 1
+  },
+  {
+    "id": "animal-friendship",
+    "type": "spell",
+    "name": "Animal Friendship",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "armor-of-agathys",
+    "type": "spell",
+    "name": "Armor of Agathys",
+    "school": "abjuration",
+    "level": 1
+  },
+  {
+    "id": "arms-of-hadar",
+    "type": "spell",
+    "name": "Arms of Hadar",
+    "school": "conjuration",
+    "level": 1
+  },
+  {
+    "id": "bane",
+    "type": "spell",
+    "name": "Bane",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "bless",
+    "type": "spell",
+    "name": "Bless",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "burning-hands",
+    "type": "spell",
+    "name": "Burning Hands",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "charm-person",
+    "type": "spell",
+    "name": "Charm Person",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "chromatic-orb",
+    "type": "spell",
+    "name": "Chromatic Orb",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "color-spray",
+    "type": "spell",
+    "name": "Color Spray",
+    "school": "illusion",
+    "level": 1
+  },
+  {
+    "id": "command",
+    "type": "spell",
+    "name": "Command",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "comprehend-languages",
+    "type": "spell",
+    "name": "Comprehend Languages",
+    "school": "divination",
+    "level": 1
+  },
+  {
+    "id": "create-or-destroy-water",
+    "type": "spell",
+    "name": "Create or Destroy Water",
+    "school": "transmutation",
+    "level": 1
+  },
+  {
+    "id": "cure-wounds",
+    "type": "spell",
+    "name": "Cure Wounds",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "detect-evil-and-good",
+    "type": "spell",
+    "name": "Detect Evil and Good",
+    "school": "divination",
+    "level": 1
+  },
+  {
+    "id": "detect-magic",
+    "type": "spell",
+    "name": "Detect Magic",
+    "school": "divination",
+    "level": 1
+  },
+  {
+    "id": "detect-poison-and-disease",
+    "type": "spell",
+    "name": "Detect Poison and Disease",
+    "school": "divination",
+    "level": 1
+  },
+  {
+    "id": "disguise-self",
+    "type": "spell",
+    "name": "Disguise Self",
+    "school": "illusion",
+    "level": 1
+  },
+  {
+    "id": "dissonant-whispers",
+    "type": "spell",
+    "name": "Dissonant Whispers",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "entangle",
+    "type": "spell",
+    "name": "Entangle",
+    "school": "conjuration",
+    "level": 1
+  },
+  {
+    "id": "expeditious-retreat",
+    "type": "spell",
+    "name": "Expeditious Retreat",
+    "school": "transmutation",
+    "level": 1
+  },
+  {
+    "id": "faerie-fire",
+    "type": "spell",
+    "name": "Faerie Fire",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "false-life",
+    "type": "spell",
+    "name": "False Life",
+    "school": "necromancy",
+    "level": 1
+  },
+  {
+    "id": "feather-fall",
+    "type": "spell",
+    "name": "Feather Fall",
+    "school": "transmutation",
+    "level": 1
+  },
+  {
+    "id": "find-familiar",
+    "type": "spell",
+    "name": "Find Familiar",
+    "school": "conjuration",
+    "level": 1
+  },
+  {
+    "id": "fog-cloud",
+    "type": "spell",
+    "name": "Fog Cloud",
+    "school": "conjuration",
+    "level": 1
+  },
+  {
+    "id": "goodberry",
+    "type": "spell",
+    "name": "Goodberry",
+    "school": "transmutation",
+    "level": 1
+  },
+  {
+    "id": "grease",
+    "type": "spell",
+    "name": "Grease",
+    "school": "conjuration",
+    "level": 1
+  },
+  {
+    "id": "guiding-bolt",
+    "type": "spell",
+    "name": "Guiding Bolt",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "healing-word",
+    "type": "spell",
+    "name": "Healing Word",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "hellish-rebuke",
+    "type": "spell",
+    "name": "Hellish Rebuke",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "heroism",
+    "type": "spell",
+    "name": "Heroism",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "hex",
+    "type": "spell",
+    "name": "Hex",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "ice-knife",
+    "type": "spell",
+    "name": "Ice Knife",
+    "school": "conjuration",
+    "level": 1
+  },
+  {
+    "id": "identify",
+    "type": "spell",
+    "name": "Identify",
+    "school": "divination",
+    "level": 1
+  },
+  {
+    "id": "illusory-script",
+    "type": "spell",
+    "name": "Illusory Script",
+    "school": "illusion",
+    "level": 1
+  },
+  {
+    "id": "inflict-wounds",
+    "type": "spell",
+    "name": "Inflict Wounds",
+    "school": "necromancy",
+    "level": 1
+  },
+  {
+    "id": "jump",
+    "type": "spell",
+    "name": "Jump",
+    "school": "transmutation",
+    "level": 1
+  },
+  {
+    "id": "longstrider",
+    "type": "spell",
+    "name": "Longstrider",
+    "school": "transmutation",
+    "level": 1
+  },
+  {
+    "id": "mage-armor",
+    "type": "spell",
+    "name": "Mage Armor",
+    "school": "abjuration",
+    "level": 1
+  },
+  {
+    "id": "magic-missile",
+    "type": "spell",
+    "name": "Magic Missile",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "protection-from-evil-and-good",
+    "type": "spell",
+    "name": "Protection from Evil and Good",
+    "school": "abjuration",
+    "level": 1
+  },
+  {
+    "id": "purify-food-and-drink",
+    "type": "spell",
+    "name": "Purify Food and Drink",
+    "school": "transmutation",
+    "level": 1
+  },
+  {
+    "id": "ray-of-sickness",
+    "type": "spell",
+    "name": "Ray of Sickness",
+    "school": "necromancy",
+    "level": 1
+  },
+  {
+    "id": "sanctuary",
+    "type": "spell",
+    "name": "Sanctuary",
+    "school": "abjuration",
+    "level": 1
+  },
+  {
+    "id": "shield",
+    "type": "spell",
+    "name": "Shield",
+    "school": "abjuration",
+    "level": 1
+  },
+  {
+    "id": "shield-of-faith",
+    "type": "spell",
+    "name": "Shield of Faith",
+    "school": "abjuration",
+    "level": 1
+  },
+  {
+    "id": "silent-image",
+    "type": "spell",
+    "name": "Silent Image",
+    "school": "illusion",
+    "level": 1
+  },
+  {
+    "id": "sleep",
+    "type": "spell",
+    "name": "Sleep",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "speak-with-animals",
+    "type": "spell",
+    "name": "Speak with Animals",
+    "school": "divination",
+    "level": 1
+  },
+  {
+    "id": "tashas-hideous-laughter",
+    "type": "spell",
+    "name": "Tasha's Hideous Laughter",
+    "school": "enchantment",
+    "level": 1
+  },
+  {
+    "id": "thunderwave",
+    "type": "spell",
+    "name": "Thunderwave",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "unseen-servant",
+    "type": "spell",
+    "name": "Unseen Servant",
+    "school": "conjuration",
+    "level": 1
+  },
+  {
+    "id": "witch-bolt",
+    "type": "spell",
+    "name": "Witch Bolt",
+    "school": "evocation",
+    "level": 1
+  },
+  {
+    "id": "alter-self",
+    "type": "spell",
+    "name": "Alter Self",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "arcane-lock",
+    "type": "spell",
+    "name": "Arcane Lock",
+    "school": "abjuration",
+    "level": 2
+  },
+  {
+    "id": "blindness-deafness",
+    "type": "spell",
+    "name": "Blindness/Deafness",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "blur",
+    "type": "spell",
+    "name": "Blur",
+    "school": "illusion",
+    "level": 2
+  },
+  {
+    "id": "cloud-of-daggers",
+    "type": "spell",
+    "name": "Cloud of Daggers",
+    "school": "conjuration",
+    "level": 2
+  },
+  {
+    "id": "continual-flame",
+    "type": "spell",
+    "name": "Continual Flame",
+    "school": "evocation",
+    "level": 2
+  },
+  {
+    "id": "crown-of-madness",
+    "type": "spell",
+    "name": "Crown of Madness",
+    "school": "enchantment",
+    "level": 2
+  },
+  {
+    "id": "darkness",
+    "type": "spell",
+    "name": "Darkness",
+    "school": "evocation",
+    "level": 2
+  },
+  {
+    "id": "darkvision",
+    "type": "spell",
+    "name": "Darkvision",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "detect-thoughts",
+    "type": "spell",
+    "name": "Detect Thoughts",
+    "school": "divination",
+    "level": 2
+  },
+  {
+    "id": "dragons-breath",
+    "type": "spell",
+    "name": "Dragon's Breath",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "flaming-sphere",
+    "type": "spell",
+    "name": "Flaming Sphere",
+    "school": "conjuration",
+    "level": 2
+  },
+  {
+    "id": "gentle-repose",
+    "type": "spell",
+    "name": "Gentle Repose",
+    "school": "necromancy",
+    "level": 2
+  },
+  {
+    "id": "gust-of-wind",
+    "type": "spell",
+    "name": "Gust of Wind",
+    "school": "evocation",
+    "level": 2
+  },
+  {
+    "id": "hold-person",
+    "type": "spell",
+    "name": "Hold Person",
+    "school": "enchantment",
+    "level": 2
+  },
+  {
+    "id": "invisibility",
+    "type": "spell",
+    "name": "Invisibility",
+    "school": "illusion",
+    "level": 2
+  },
+  {
+    "id": "knock",
+    "type": "spell",
+    "name": "Knock",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "levitate",
+    "type": "spell",
+    "name": "Levitate",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "locate-object",
+    "type": "spell",
+    "name": "Locate Object",
+    "school": "divination",
+    "level": 2
+  },
+  {
+    "id": "magic-mouth",
+    "type": "spell",
+    "name": "Magic Mouth",
+    "school": "illusion",
+    "level": 2
+  },
+  {
+    "id": "magic-weapon",
+    "type": "spell",
+    "name": "Magic Weapon",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "melfs-acid-arrow",
+    "type": "spell",
+    "name": "Melf's Acid Arrow",
+    "school": "evocation",
+    "level": 2
+  },
+  {
+    "id": "mind-spike",
+    "type": "spell",
+    "name": "Mind Spike",
+    "school": "divination",
+    "level": 2
+  },
+  {
+    "id": "mirror-image",
+    "type": "spell",
+    "name": "Mirror Image",
+    "school": "illusion",
+    "level": 2
+  },
+  {
+    "id": "misty-step",
+    "type": "spell",
+    "name": "Misty Step",
+    "school": "conjuration",
+    "level": 2
+  },
+  {
+    "id": "nystuls-magic-aura",
+    "type": "spell",
+    "name": "Nystul's Magic Aura",
+    "school": "illusion",
+    "level": 2
+  },
+  {
+    "id": "phantasmal-force",
+    "type": "spell",
+    "name": "Phantasmal Force",
+    "school": "illusion",
+    "level": 2
+  },
+  {
+    "id": "ray-of-enfeeblement",
+    "type": "spell",
+    "name": "Ray of Enfeeblement",
+    "school": "necromancy",
+    "level": 2
+  },
+  {
+    "id": "rope-trick",
+    "type": "spell",
+    "name": "Rope Trick",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "scorching-ray",
+    "type": "spell",
+    "name": "Scorching Ray",
+    "school": "evocation",
+    "level": 2
+  },
+  {
+    "id": "see-invisibility",
+    "type": "spell",
+    "name": "See Invisibility",
+    "school": "divination",
+    "level": 2
+  },
+  {
+    "id": "shatter",
+    "type": "spell",
+    "name": "Shatter",
+    "school": "evocation",
+    "level": 2
+  },
+  {
+    "id": "spider-climb",
+    "type": "spell",
+    "name": "Spider Climb",
+    "school": "transmutation",
+    "level": 2
+  },
+  {
+    "id": "suggestion",
+    "type": "spell",
+    "name": "Suggestion",
+    "school": "enchantment",
+    "level": 2
+  },
+  {
+    "id": "web",
+    "type": "spell",
+    "name": "Web",
+    "school": "conjuration",
+    "level": 2
+  }
+]
