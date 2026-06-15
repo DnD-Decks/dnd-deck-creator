@@ -19,6 +19,8 @@ Spell and class data sourced from the [D&D 5e 2024 SRD](https://github.com/manua
 
 > SRD 5.2 used under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) (Wizards of the Coast LLC). D&D trademarks and non-SRD content remain property of WotC.
 
+The verbatim SRD 5.2.1 PDF (CC-BY-4.0 official release) is committed under [`reference/srd/`](reference/srd/) as an audit ground-truth. **SRD content only** — not the full PHB.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
