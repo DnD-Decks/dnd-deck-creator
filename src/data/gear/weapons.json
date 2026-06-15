@@ -15,7 +15,7 @@
     "proficiency": "simple",
     "range": "melee",
     "damage": { "dice": "1d4", "type": "piercing" },
-    "properties": ["finesse", "light", "thrown (20/60)"],
+    "properties": ["finesse", "light", { "id": "thrown", "detail": "20/60" }],
     "mastery": "nick",
     "icon": "vol8/icon-vol8_16"
   },
@@ -35,7 +35,7 @@
     "proficiency": "simple",
     "range": "melee",
     "damage": { "dice": "1d6", "type": "slashing" },
-    "properties": ["light", "thrown (20/60)"],
+    "properties": ["light", { "id": "thrown", "detail": "20/60" }],
     "mastery": "vex",
     "icon": "vol8/icon-vol8_172"
   },
@@ -45,7 +45,7 @@
     "proficiency": "simple",
     "range": "melee",
     "damage": { "dice": "1d6", "type": "piercing" },
-    "properties": ["thrown (30/120)"],
+    "properties": [{ "id": "thrown", "detail": "30/120" }],
     "mastery": "slow",
     "icon": "vol8/icon-vol8_60"
   },
@@ -55,7 +55,7 @@
     "proficiency": "simple",
     "range": "melee",
     "damage": { "dice": "1d4", "type": "bludgeoning" },
-    "properties": ["light", "thrown (20/60)"],
+    "properties": ["light", { "id": "thrown", "detail": "20/60" }],
     "mastery": "nick",
     "icon": "vol8/icon-vol8_15"
   },
@@ -75,7 +75,7 @@
     "proficiency": "simple",
     "range": "melee",
     "damage": { "dice": "1d6", "type": "bludgeoning" },
-    "properties": ["versatile (1d8)"],
+    "properties": [{ "id": "versatile", "detail": "1d8" }],
     "mastery": "topple",
     "icon": "vol8/icon-vol8_05"
   },
@@ -95,7 +95,7 @@
     "proficiency": "simple",
     "range": "melee",
     "damage": { "dice": "1d6", "type": "piercing" },
-    "properties": ["thrown (20/60)", "versatile (1d8)"],
+    "properties": [{ "id": "thrown", "detail": "20/60" }, { "id": "versatile", "detail": "1d8" }],
     "mastery": "sap",
     "icon": "vol8/icon-vol8_60"
   },
@@ -105,7 +105,7 @@
     "proficiency": "simple",
     "range": "ranged",
     "damage": { "dice": "1d4", "type": "piercing" },
-    "properties": ["finesse", "thrown (20/60)"],
+    "properties": ["finesse", { "id": "thrown", "detail": "20/60" }],
     "mastery": "vex",
     "icon": "vol8/icon-vol8_35"
   },
@@ -115,7 +115,7 @@
     "proficiency": "simple",
     "range": "ranged",
     "damage": { "dice": "1d8", "type": "piercing" },
-    "properties": ["ammunition (80/320; bolt)", "loading", "two-handed"],
+    "properties": [{ "id": "ammunition", "detail": "80/320; bolt" }, "loading", "two-handed"],
     "mastery": "slow",
     "icon": "vol8/icon-vol8_154"
   },
@@ -125,7 +125,7 @@
     "proficiency": "simple",
     "range": "ranged",
     "damage": { "dice": "1d6", "type": "piercing" },
-    "properties": ["ammunition (80/320; arrow)", "two-handed"],
+    "properties": [{ "id": "ammunition", "detail": "80/320; arrow" }, "two-handed"],
     "mastery": "vex",
     "icon": "vol8/icon-vol8_75"
   },
@@ -135,7 +135,7 @@
     "proficiency": "simple",
     "range": "ranged",
     "damage": { "dice": "1d4", "type": "bludgeoning" },
-    "properties": ["ammunition (30/120; bullet)"],
+    "properties": [{ "id": "ammunition", "detail": "30/120; bullet" }],
     "mastery": "slow",
     "icon": "vol8/icon-vol8_80"
   },
@@ -145,7 +145,7 @@
     "proficiency": "martial",
     "range": "melee",
     "damage": { "dice": "1d8", "type": "slashing" },
-    "properties": ["versatile (1d10)"],
+    "properties": [{ "id": "versatile", "detail": "1d10" }],
     "mastery": "topple",
     "icon": "vol8/icon-vol8_02"
   },
@@ -205,7 +205,7 @@
     "proficiency": "martial",
     "range": "melee",
     "damage": { "dice": "1d10", "type": "piercing" },
-    "properties": ["heavy", "reach", "two-handed (unless mounted)"],
+    "properties": ["heavy", "reach", { "id": "two-handed", "detail": "unless mounted" }],
     "mastery": "topple",
     "icon": "vol8/icon-vol8_105"
   },
@@ -215,7 +215,7 @@
     "proficiency": "martial",
     "range": "melee",
     "damage": { "dice": "1d8", "type": "slashing" },
-    "properties": ["versatile (1d10)"],
+    "properties": [{ "id": "versatile", "detail": "1d10" }],
     "mastery": "sap",
     "icon": "vol8/icon-vol8_110"
   },
@@ -285,7 +285,7 @@
     "proficiency": "martial",
     "range": "melee",
     "damage": { "dice": "1d8", "type": "piercing" },
-    "properties": ["thrown (20/60)", "versatile (1d10)"],
+    "properties": [{ "id": "thrown", "detail": "20/60" }, { "id": "versatile", "detail": "1d10" }],
     "mastery": "topple",
     "icon": "vol8/icon-vol8_145"
   },
@@ -295,7 +295,7 @@
     "proficiency": "martial",
     "range": "melee",
     "damage": { "dice": "1d8", "type": "bludgeoning" },
-    "properties": ["versatile (1d10)"],
+    "properties": [{ "id": "versatile", "detail": "1d10" }],
     "mastery": "push",
     "icon": "vol8/icon-vol8_157"
   },
@@ -305,7 +305,7 @@
     "proficiency": "martial",
     "range": "melee",
     "damage": { "dice": "1d8", "type": "piercing" },
-    "properties": ["versatile (1d10)"],
+    "properties": [{ "id": "versatile", "detail": "1d10" }],
     "mastery": "sap",
     "icon": "vol8/icon-vol8_155"
   },
@@ -325,7 +325,7 @@
     "proficiency": "martial",
     "range": "ranged",
     "damage": { "dice": "1", "type": "piercing" },
-    "properties": ["ammunition (25/100; needle)", "loading"],
+    "properties": [{ "id": "ammunition", "detail": "25/100; needle" }, "loading"],
     "mastery": "vex",
     "icon": "vol8/icon-vol8_165"
   },
@@ -335,7 +335,7 @@
     "proficiency": "martial",
     "range": "ranged",
     "damage": { "dice": "1d6", "type": "piercing" },
-    "properties": ["ammunition (30/120; bolt)", "light", "loading"],
+    "properties": [{ "id": "ammunition", "detail": "30/120; bolt" }, "light", "loading"],
     "mastery": "vex",
     "icon": "vol8/icon-vol8_170"
   },
@@ -345,7 +345,12 @@
     "proficiency": "martial",
     "range": "ranged",
     "damage": { "dice": "1d10", "type": "piercing" },
-    "properties": ["ammunition (100/400; bolt)", "heavy", "loading", "two-handed"],
+    "properties": [
+      { "id": "ammunition", "detail": "100/400; bolt" },
+      "heavy",
+      "loading",
+      "two-handed"
+    ],
     "mastery": "push",
     "icon": "vol8/icon-vol8_175"
   },
@@ -355,7 +360,7 @@
     "proficiency": "martial",
     "range": "ranged",
     "damage": { "dice": "1d8", "type": "piercing" },
-    "properties": ["ammunition (150/600; arrow)", "heavy", "two-handed"],
+    "properties": [{ "id": "ammunition", "detail": "150/600; arrow" }, "heavy", "two-handed"],
     "mastery": "slow",
     "icon": "vol8/icon-vol8_180"
   },
@@ -365,7 +370,7 @@
     "proficiency": "martial",
     "range": "ranged",
     "damage": { "dice": "1d12", "type": "piercing" },
-    "properties": ["ammunition (40/120; bullet)", "loading", "two-handed"],
+    "properties": [{ "id": "ammunition", "detail": "40/120; bullet" }, "loading", "two-handed"],
     "mastery": "slow",
     "icon": "vol8/icon-vol8_185"
   },
@@ -375,7 +380,7 @@
     "proficiency": "martial",
     "range": "ranged",
     "damage": { "dice": "1d10", "type": "piercing" },
-    "properties": ["ammunition (30/90; bullet)", "loading"],
+    "properties": [{ "id": "ammunition", "detail": "30/90; bullet" }, "loading"],
     "mastery": "vex",
     "icon": "vol8/icon-vol8_190"
   }

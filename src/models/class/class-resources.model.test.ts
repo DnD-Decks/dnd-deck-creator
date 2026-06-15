@@ -147,7 +147,7 @@ test("paladin spell-slot-1st is 0 at L1 (not yet available)", () => {
 test("resolveResourcesForLevel throws for invalid level (0)", () => {
   assert.throws(
     () => resolveResourcesForLevel("barbarian", 0, DEFAULT_SCORES),
-    /level must be an integer 1–20/
+    /level must be an integer 1–5/
   );
 });
 

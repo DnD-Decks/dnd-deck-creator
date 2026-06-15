@@ -79,13 +79,12 @@ export function resolveResourcesForLevel(
   level: number,
   abilityScores: AbilityScores
 ): CharacterResource[] {
-  if (!Number.isInteger(level) || level < 1 || level > 20) {
-    throw new Error(`resolveResourcesForLevel: level must be an integer 1–20, got ${level}`);
+  if (!Number.isInteger(level) || level < 1 || level > 5) {
+    throw new Error(`resolveResourcesForLevel: level must be an integer 1–5, got ${level}`);
   }
   const entry = RAW[characterClass];
   if (!entry) throw new Error(`resolveResourcesForLevel: no data for class "${characterClass}"`);
   return entry.resources.flatMap((r) => {
-    // Progression tables currently cover levels 1–5; missing keys return [] (data not yet added).
     const rawValue = r.progression[String(level)] ?? 0;
     const max = resolveMax(rawValue, abilityScores);
     if (max <= 0) return [];

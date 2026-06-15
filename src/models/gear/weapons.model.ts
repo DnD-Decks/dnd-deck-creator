@@ -7,6 +7,8 @@ import type { WeaponPropertyId } from "src/models/gear/weapon-properties.model";
 export type WeaponProficiency = "simple" | "martial";
 export type WeaponRange = "melee" | "ranged";
 
+export type WeaponPropertyRef = WeaponPropertyId | { id: WeaponPropertyId; detail: string };
+
 export type WeaponId =
   | "club"
   | "dagger"
@@ -53,7 +55,7 @@ export type Weapon = {
   proficiency: WeaponProficiency;
   range: WeaponRange;
   damage: { dice: string; type: DamageType };
-  properties: WeaponPropertyId[];
+  properties: WeaponPropertyRef[];
   mastery: WeaponMasteryName;
 };
 
