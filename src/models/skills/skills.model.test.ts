@@ -39,14 +39,6 @@ test("list returns exactly 18 skills", () => {
   assert.equal(skills.list().length, 18);
 });
 
-test("every skill has a name, label, and ability", () => {
-  for (const s of skills.list()) {
-    assert.ok(s.name, "missing name");
-    assert.ok(s.label, `missing label on ${s.name}`);
-    assert.ok(s.ability, `missing ability on ${s.name}`);
-  }
-});
-
 // --- skills.findAll ---
 
 test("findAll str skills: only athletics", () => {

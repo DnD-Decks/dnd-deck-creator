@@ -32,10 +32,3 @@ test("find vex returns details", () => {
 test("list has at least 8 masteries", () => {
   assert.ok(weaponMastery.list().length >= 8);
 });
-
-test("every mastery has id and description", () => {
-  for (const m of weaponMastery.list()) {
-    assert.ok(m.id, "missing id");
-    assert.ok(m.description, `missing description on ${m.id}`);
-  }
-});

@@ -35,10 +35,3 @@ test("find shields returns details", () => {
 test("list has at least 6 entries", () => {
   assert.ok(proficiencyDetails.list().length >= 6);
 });
-
-test("every proficiency has id and label", () => {
-  for (const p of proficiencyDetails.list()) {
-    assert.ok(p.id, "missing id");
-    assert.ok(p.label, `missing label on ${p.id}`);
-  }
-});

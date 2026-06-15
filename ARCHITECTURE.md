@@ -14,11 +14,7 @@
 | Weapon mastery | `weapon-mastery` | vertical (spell layout) | ✓ Fighter L1 (all 8 properties) | "Cleave", "Graze" |
 | Companion stats | `companion` | — | deferred | Ranger's beast companion |
 
-> Spells shared between classes are **intentionally duplicated** per deck: visual class identity is expressed in card style, not shared components.
-
-> **Spell scope (level-1 decks):** decks currently show cantrips + level-1 spells only. Level-2+ spells are in `src/data/spells/` but excluded from deck composition (`SPELL_LEVELS = [0, 1]` in `deck.model.ts`).
-
-> **Section order within a deck:** Resources → Class Features → Spells (Cantrips, Level 1, …) → Weapon Masteries. Insertion order in `decks.get()` drives the grouping in `DeckView`.
+Spells shared between classes are intentionally duplicated — visual class identity is in card style, not shared components. Decks show cantrips + level-1 only (`SPELL_LEVELS = [0, 1]` in `deck.model.ts`). Section order: Resources → Class Features → Spells → Weapon Masteries.
 
 ---
 
@@ -72,28 +68,9 @@ JSON for spells is vendored from sibling repo [`dnd-beginner-character-sheet-5e-
 | `common/` | Abilities, actions, gear |
 | `origin/` | Backgrounds, origin feats, species |
 
-> **Data import mechanism:** when vendoring more spells, add a `scripts/fetch-data.mjs` (zero deps, Node built-in fetch) that downloads JSON from the sibling repo's `main` branch into `src/data/`.
-
 ### Spell record shape
 
-```ts
-type Spell = {
-  id: string;           // kebab-case
-  name: string;
-  level: number;        // 0 = cantrip
-  school: string;       // "Abjuration" | "Evocation" | …
-  castingTime: string;
-  range: string;
-  components: string;
-  duration: string;
-  concentration: boolean;
-  ritual: boolean;
-  description: string;
-  save?: string;
-  damage?: { dice: string; type: string[] };
-  icon?: string;        // sprite ref e.g. "vol3/icon-vol3_20"
-};
-```
+See `Spell` type in `src/models/spells/spells.model.ts`.
 
 ---
 

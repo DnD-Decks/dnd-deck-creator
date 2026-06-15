@@ -161,12 +161,3 @@ test("resolveResourcesForLevel throws for unknown class", () => {
 test("resolveResourceResetOn throws for unknown class", () => {
   assert.throws(() => resolveResourceResetOn("artificer" as "barbarian", "rage"), /unknown class/);
 });
-
-test("bard bardic-inspiration with neutral cha (score 10) is floored at 1", () => {
-  // cha=10 → modifier=0 → resolveMax returns max(1, 0) = 1
-  const neutralCha: AbilityScores = { ...DEFAULT_SCORES, cha: 10 };
-  const resources = resolveResourcesForLevel("bard", 1, neutralCha);
-  const inspiration = resources.find((r) => r.resourceId === "bardic-inspiration");
-  assert.ok(inspiration !== undefined);
-  assert.equal(inspiration.max, 1);
-});

@@ -1,7 +1,5 @@
 # dnd-deck-designer
 
-> **Status: scaffolding** — project skeleton and data import not yet wired.
-
 A static web tool for laying out custom **D&D 5.5 (2024)** card decks per PHB class — screen preview and professional printing.
 
 ## Docs

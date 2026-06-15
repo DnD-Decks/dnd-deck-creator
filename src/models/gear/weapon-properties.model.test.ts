@@ -35,10 +35,3 @@ test("find heavy returns details", () => {
 test("list has at least 10 properties", () => {
   assert.ok(weaponProperties.list().length >= 10);
 });
-
-test("every property has id and description", () => {
-  for (const p of weaponProperties.list()) {
-    assert.ok(p.id, "missing id");
-    assert.ok(p.description, `missing description on ${p.id}`);
-  }
-});

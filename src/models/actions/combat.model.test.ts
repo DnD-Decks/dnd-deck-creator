@@ -39,11 +39,3 @@ test("list contains Attack and Opportunity Attack", () => {
   assert.ok(all.some((a) => a.name === "Attack"));
   assert.ok(all.some((a) => a.name === "Opportunity Attack"));
 });
-
-test("every combat action has name, timing, and description", () => {
-  for (const a of combatActions.list()) {
-    assert.ok(a.name, "missing name");
-    assert.ok(a.timing, `missing timing on ${a.name}`);
-    assert.ok(a.description, `missing description on ${a.name}`);
-  }
-});

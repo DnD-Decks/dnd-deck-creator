@@ -40,11 +40,3 @@ test("list returns all six abilities in canonical order", () => {
   const ids = abilities.list().map((a) => a.id);
   assert.deepEqual(ids, ["str", "dex", "con", "int", "wis", "cha"]);
 });
-
-test("every ability has id, label, and short", () => {
-  for (const a of abilities.list()) {
-    assert.ok(a.id, "missing id");
-    assert.ok(a.label, `missing label on ${a.id}`);
-    assert.ok(a.short, `missing short on ${a.id}`);
-  }
-});

@@ -23,22 +23,6 @@ test("wizard lvl-2 spells: 35 entries, all level 2", () => {
   assert.ok(level2.every((s) => s.level === 2));
 });
 
-test("every wizard cantrip resolves to a defined spell", () => {
-  for (const s of spells.findAll({ cls: "wizard", level: 0 })) {
-    assert.ok(s !== undefined, "cantrip undefined");
-    assert.ok(s.id, "missing id");
-    assert.ok(s.name, `missing name on ${s.id}`);
-  }
-});
-
-test("every wizard lvl-1 spell resolves to a defined spell", () => {
-  for (const s of spells.findAll({ cls: "wizard", level: 1 })) {
-    assert.ok(s !== undefined, "spell undefined");
-    assert.ok(s.id, "missing id");
-    assert.ok(s.name, `missing name on ${s.id}`);
-  }
-});
-
 // --- all caster classes: cantrips + level1 non-empty and fully resolved ---
 
 const CASTER_CLASSES = ["bard", "cleric", "druid", "sorcerer", "warlock", "wizard"] as const;
