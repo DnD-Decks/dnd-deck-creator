@@ -1,0 +1,28 @@
+dnd-deck-designer
+Copyright (c) 2026 DnD-Decks
+
+---
+
+## License summary
+
+This repository contains material under two separate licenses:
+
+| Scope | License |
+|-------|---------|
+| Project source code (`src/`, configs, tooling) | MIT — see LICENSE |
+| SRD 5.2.1 content (`reference/srd/`, SRD-derived data in `src/data/`) | CC-BY-4.0 — see below |
+
+---
+
+## SRD 5.2.1 Attribution (CC-BY-4.0)
+
+This work includes material from the System Reference Document 5.2.1 ("SRD 5.2.1")
+by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd.
+
+The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International
+License (CC-BY-4.0): https://creativecommons.org/licenses/by/4.0/
+
+The SRD covers a subset of D&D 5e (2024) content. D&D, Dungeons & Dragons, and all
+associated trademarks and trade dress are property of Wizards of the Coast LLC.
+Non-SRD content (including content from the full Player's Handbook) is not included
+in this repository.
