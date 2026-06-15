@@ -1,4 +1,6 @@
 import barbarianData from "../../data/classes/barbarian.json" with { type: "json" };
+
+import type { SkillName } from "src/models/skills/skills.model";
 import bardData from "../../data/classes/bard.json" with { type: "json" };
 import clericData from "../../data/classes/cleric.json" with { type: "json" };
 import druidData from "../../data/classes/druid.json" with { type: "json" };
@@ -10,6 +12,16 @@ import rogueData from "../../data/classes/rogue.json" with { type: "json" };
 import sorcererData from "../../data/classes/sorcerer.json" with { type: "json" };
 import warlockData from "../../data/classes/warlock.json" with { type: "json" };
 import wizardData from "../../data/classes/wizard.json" with { type: "json" };
+
+export type ManualClassification = "martial" | "spell-caster" | "versatile";
+
+export type ProficiencyKey =
+  | "light-armor"
+  | "medium-armor"
+  | "heavy-armor"
+  | "shields"
+  | "simple-weapons"
+  | "martial-weapons";
 
 export type CharacterClass =
   | "barbarian"
@@ -25,27 +37,22 @@ export type CharacterClass =
   | "warlock"
   | "wizard";
 
+type HitDie = "d6" | "d8" | "d10" | "d12";
+
 export type ClassDetails = {
   id: CharacterClass;
   label: string;
   icon: string;
-  hitDie: string;
+  hitDie: HitDie;
   saves: string;
   description: string;
-  manualClassification: "martial" | "spell-caster" | "versatile";
-  proficiencies: {
-    "light-armor": boolean;
-    "medium-armor": boolean;
-    "heavy-armor": boolean;
-    shields: boolean;
-    "simple-weapons": boolean;
-    "martial-weapons": boolean;
-    skills: { n: number; options: string[] };
+  manualClassification: ManualClassification;
+  proficiencies: Record<ProficiencyKey, boolean> & {
+    skills: { n: number; options: SkillName[] };
   };
 };
 
 // Raw JSON is a superset of ClassDetails; cast through unknown.
-// Tests verify the fields we actually expose.
 type RawClass = Omit<ClassDetails, "id">;
 
 const RAW: Record<CharacterClass, RawClass> = {

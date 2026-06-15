@@ -3,7 +3,7 @@
     "id": "wizard-mana",
     "name": "Mana",
     "uses": 2,
-    "recharge": "Long Rest",
+    "recharge": "long-rest",
     "description": "You have 2 level-1 spell slots. Expend one to cast a prepared level-1 spell. You regain all expended mana after a Long Rest."
   }
 ]

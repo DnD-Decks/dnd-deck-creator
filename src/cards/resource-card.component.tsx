@@ -1,12 +1,26 @@
+import type { ActionTiming } from "src/models/actions/combat.model";
 import type { Resource } from "src/models/resources/resources.model";
+import type { RestType } from "src/models/rest/rest-actions.model";
 import styles from "./resource-card.module.css";
 
 type Props = { resource: Resource };
 
 const usesLabel = (uses: number) => (uses === 1 ? "×1" : `×${uses}`);
 
+const REST_LABELS: Record<RestType, string> = {
+  "short-rest": "Short Rest",
+  "long-rest": "Long Rest",
+};
+
+const TIMING_LABELS: Record<ActionTiming, string> = {
+  action: "Action",
+  "bonus-action": "Bonus Action",
+  reaction: "Reaction",
+};
+
 export function ResourceCard({ resource }: Props) {
-  const metaParts = [resource.action, `Recharges: ${resource.recharge}`].filter(Boolean);
+  const timingLabel = resource.action ? TIMING_LABELS[resource.action] : undefined;
+  const metaParts = [timingLabel, `Recharges: ${REST_LABELS[resource.recharge]}`].filter(Boolean);
 
   return (
     <article className={styles.card}>

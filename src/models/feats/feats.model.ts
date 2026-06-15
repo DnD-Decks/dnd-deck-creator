@@ -1,4 +1,3 @@
-// Runtime imports are relative with .ts extension so node:test can resolve them
 import fighterFeatsData from "../../data/feats/fighter-feats.json" with { type: "json" };
 import wizardFeatsData from "../../data/feats/wizard-feats.json" with { type: "json" };
 

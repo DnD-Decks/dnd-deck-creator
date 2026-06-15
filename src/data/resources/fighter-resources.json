@@ -3,8 +3,8 @@
     "id": "fighter-second-wind",
     "name": "Second Wind",
     "uses": 1,
-    "recharge": "Short Rest",
-    "action": "Bonus Action",
+    "recharge": "short-rest",
+    "action": "bonus-action",
     "description": "You can draw on your stamina to heal yourself. As a Bonus Action, regain HP equal to 1d10 + your Fighter level. You can use this once, and regain it when you finish a Short or Long Rest."
   }
 ]

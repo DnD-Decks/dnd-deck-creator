@@ -10,9 +10,9 @@ test("wizard has 1 resource (mana)", () => {
   assert.equal(result[0].name, "Mana");
 });
 
-test("wizard mana recharges on Long Rest", () => {
+test("wizard mana recharges on long-rest", () => {
   const [mana] = resources.findAll({ cls: "wizard" });
-  assert.equal(mana.recharge, "Long Rest");
+  assert.equal(mana.recharge, "long-rest");
   assert.equal(mana.uses, 2);
 });
 
@@ -22,11 +22,11 @@ test("fighter has 1 resource (Second Wind)", () => {
   assert.equal(result[0].id, "fighter-second-wind");
 });
 
-test("fighter Second Wind recharges on Short Rest", () => {
+test("fighter Second Wind recharges on short-rest", () => {
   const [secondWind] = resources.findAll({ cls: "fighter" });
-  assert.equal(secondWind.recharge, "Short Rest");
+  assert.equal(secondWind.recharge, "short-rest");
   assert.equal(secondWind.uses, 1);
-  assert.equal(secondWind.action, "Bonus Action");
+  assert.equal(secondWind.action, "bonus-action");
 });
 
 test("class without resources returns empty array", () => {

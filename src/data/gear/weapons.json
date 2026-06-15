@@ -1,0 +1,387 @@
+[
+  {
+    "id": "club",
+    "name": "Club",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d4", "type": "bludgeoning" },
+    "properties": [],
+    "mastery": "slow",
+    "icon": "vol8/icon-vol8_50"
+  },
+  {
+    "id": "dagger",
+    "name": "Dagger",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d4", "type": "piercing" },
+    "properties": ["finesse", "light", { "id": "thrown", "detail": "20/60" }],
+    "mastery": "nick",
+    "icon": "vol8/icon-vol8_16"
+  },
+  {
+    "id": "greatclub",
+    "name": "Greatclub",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "bludgeoning" },
+    "properties": ["two-handed"],
+    "mastery": "push",
+    "icon": "vol8/icon-vol8_159"
+  },
+  {
+    "id": "handaxe",
+    "name": "Handaxe",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d6", "type": "slashing" },
+    "properties": ["light", { "id": "thrown", "detail": "20/60" }],
+    "mastery": "vex",
+    "icon": "vol8/icon-vol8_172"
+  },
+  {
+    "id": "javelin",
+    "name": "Javelin",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d6", "type": "piercing" },
+    "properties": [{ "id": "thrown", "detail": "30/120" }],
+    "mastery": "slow",
+    "icon": "vol8/icon-vol8_60"
+  },
+  {
+    "id": "light-hammer",
+    "name": "Light Hammer",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d4", "type": "bludgeoning" },
+    "properties": ["light", { "id": "thrown", "detail": "20/60" }],
+    "mastery": "nick",
+    "icon": "vol8/icon-vol8_15"
+  },
+  {
+    "id": "mace",
+    "name": "Mace",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d6", "type": "bludgeoning" },
+    "properties": [],
+    "mastery": "sap",
+    "icon": "vol8/icon-vol8_48"
+  },
+  {
+    "id": "quarterstaff",
+    "name": "Quarterstaff",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d6", "type": "bludgeoning" },
+    "properties": [{ "id": "versatile", "detail": "1d8" }],
+    "mastery": "topple",
+    "icon": "vol8/icon-vol8_05"
+  },
+  {
+    "id": "sickle",
+    "name": "Sickle",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d4", "type": "slashing" },
+    "properties": ["light"],
+    "mastery": "nick",
+    "icon": "vol8/icon-vol8_55"
+  },
+  {
+    "id": "spear",
+    "name": "Spear",
+    "proficiency": "simple",
+    "range": "melee",
+    "damage": { "dice": "1d6", "type": "piercing" },
+    "properties": [{ "id": "thrown", "detail": "20/60" }, { "id": "versatile", "detail": "1d8" }],
+    "mastery": "sap",
+    "icon": "vol8/icon-vol8_60"
+  },
+  {
+    "id": "dart",
+    "name": "Dart",
+    "proficiency": "simple",
+    "range": "ranged",
+    "damage": { "dice": "1d4", "type": "piercing" },
+    "properties": ["finesse", { "id": "thrown", "detail": "20/60" }],
+    "mastery": "vex",
+    "icon": "vol8/icon-vol8_35"
+  },
+  {
+    "id": "light-crossbow",
+    "name": "Light Crossbow",
+    "proficiency": "simple",
+    "range": "ranged",
+    "damage": { "dice": "1d8", "type": "piercing" },
+    "properties": [{ "id": "ammunition", "detail": "80/320; bolt" }, "loading", "two-handed"],
+    "mastery": "slow",
+    "icon": "vol8/icon-vol8_154"
+  },
+  {
+    "id": "shortbow",
+    "name": "Shortbow",
+    "proficiency": "simple",
+    "range": "ranged",
+    "damage": { "dice": "1d6", "type": "piercing" },
+    "properties": [{ "id": "ammunition", "detail": "80/320; arrow" }, "two-handed"],
+    "mastery": "vex",
+    "icon": "vol8/icon-vol8_75"
+  },
+  {
+    "id": "sling",
+    "name": "Sling",
+    "proficiency": "simple",
+    "range": "ranged",
+    "damage": { "dice": "1d4", "type": "bludgeoning" },
+    "properties": [{ "id": "ammunition", "detail": "30/120; bullet" }],
+    "mastery": "slow",
+    "icon": "vol8/icon-vol8_80"
+  },
+  {
+    "id": "battleaxe",
+    "name": "Battleaxe",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "slashing" },
+    "properties": [{ "id": "versatile", "detail": "1d10" }],
+    "mastery": "topple",
+    "icon": "vol8/icon-vol8_02"
+  },
+  {
+    "id": "flail",
+    "name": "Flail",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "bludgeoning" },
+    "properties": [],
+    "mastery": "sap",
+    "icon": "vol8/icon-vol8_49"
+  },
+  {
+    "id": "glaive",
+    "name": "Glaive",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d10", "type": "slashing" },
+    "properties": ["heavy", "reach", "two-handed"],
+    "mastery": "graze",
+    "icon": "vol8/icon-vol8_90"
+  },
+  {
+    "id": "greataxe",
+    "name": "Greataxe",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d12", "type": "slashing" },
+    "properties": ["heavy", "two-handed"],
+    "mastery": "cleave",
+    "icon": "vol8/icon-vol8_53"
+  },
+  {
+    "id": "greatsword",
+    "name": "Greatsword",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "2d6", "type": "slashing" },
+    "properties": ["heavy", "two-handed"],
+    "mastery": "graze",
+    "icon": "vol8/icon-vol8_10"
+  },
+  {
+    "id": "halberd",
+    "name": "Halberd",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d10", "type": "slashing" },
+    "properties": ["heavy", "reach", "two-handed"],
+    "mastery": "cleave",
+    "icon": "vol8/icon-vol8_100"
+  },
+  {
+    "id": "lance",
+    "name": "Lance",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d10", "type": "piercing" },
+    "properties": ["heavy", "reach", { "id": "two-handed", "detail": "unless mounted" }],
+    "mastery": "topple",
+    "icon": "vol8/icon-vol8_105"
+  },
+  {
+    "id": "longsword",
+    "name": "Longsword",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "slashing" },
+    "properties": [{ "id": "versatile", "detail": "1d10" }],
+    "mastery": "sap",
+    "icon": "vol8/icon-vol8_110"
+  },
+  {
+    "id": "maul",
+    "name": "Maul",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "2d6", "type": "bludgeoning" },
+    "properties": ["heavy", "two-handed"],
+    "mastery": "topple",
+    "icon": "vol8/icon-vol8_115"
+  },
+  {
+    "id": "morningstar",
+    "name": "Morningstar",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "piercing" },
+    "properties": [],
+    "mastery": "sap",
+    "icon": "vol8/icon-vol8_162"
+  },
+  {
+    "id": "pike",
+    "name": "Pike",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d10", "type": "piercing" },
+    "properties": ["heavy", "reach", "two-handed"],
+    "mastery": "push",
+    "icon": "vol8/icon-vol8_08"
+  },
+  {
+    "id": "rapier",
+    "name": "Rapier",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "piercing" },
+    "properties": ["finesse"],
+    "mastery": "vex",
+    "icon": "vol8/icon-vol8_33"
+  },
+  {
+    "id": "scimitar",
+    "name": "Scimitar",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d6", "type": "slashing" },
+    "properties": ["finesse", "light"],
+    "mastery": "nick",
+    "icon": "vol8/icon-vol8_40"
+  },
+  {
+    "id": "shortsword",
+    "name": "Shortsword",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d6", "type": "piercing" },
+    "properties": ["finesse", "light"],
+    "mastery": "vex",
+    "icon": "vol8/icon-vol8_198"
+  },
+  {
+    "id": "trident",
+    "name": "Trident",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "piercing" },
+    "properties": [{ "id": "thrown", "detail": "20/60" }, { "id": "versatile", "detail": "1d10" }],
+    "mastery": "topple",
+    "icon": "vol8/icon-vol8_145"
+  },
+  {
+    "id": "warhammer",
+    "name": "Warhammer",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "bludgeoning" },
+    "properties": [{ "id": "versatile", "detail": "1d10" }],
+    "mastery": "push",
+    "icon": "vol8/icon-vol8_157"
+  },
+  {
+    "id": "war-pick",
+    "name": "War Pick",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d8", "type": "piercing" },
+    "properties": [{ "id": "versatile", "detail": "1d10" }],
+    "mastery": "sap",
+    "icon": "vol8/icon-vol8_155"
+  },
+  {
+    "id": "whip",
+    "name": "Whip",
+    "proficiency": "martial",
+    "range": "melee",
+    "damage": { "dice": "1d4", "type": "slashing" },
+    "properties": ["finesse", "reach"],
+    "mastery": "slow",
+    "icon": "vol8/icon-vol8_160"
+  },
+  {
+    "id": "blowgun",
+    "name": "Blowgun",
+    "proficiency": "martial",
+    "range": "ranged",
+    "damage": { "dice": "1", "type": "piercing" },
+    "properties": [{ "id": "ammunition", "detail": "25/100; needle" }, "loading"],
+    "mastery": "vex",
+    "icon": "vol8/icon-vol8_165"
+  },
+  {
+    "id": "hand-crossbow",
+    "name": "Hand Crossbow",
+    "proficiency": "martial",
+    "range": "ranged",
+    "damage": { "dice": "1d6", "type": "piercing" },
+    "properties": [{ "id": "ammunition", "detail": "30/120; bolt" }, "light", "loading"],
+    "mastery": "vex",
+    "icon": "vol8/icon-vol8_170"
+  },
+  {
+    "id": "heavy-crossbow",
+    "name": "Heavy Crossbow",
+    "proficiency": "martial",
+    "range": "ranged",
+    "damage": { "dice": "1d10", "type": "piercing" },
+    "properties": [
+      { "id": "ammunition", "detail": "100/400; bolt" },
+      "heavy",
+      "loading",
+      "two-handed"
+    ],
+    "mastery": "push",
+    "icon": "vol8/icon-vol8_175"
+  },
+  {
+    "id": "longbow",
+    "name": "Longbow",
+    "proficiency": "martial",
+    "range": "ranged",
+    "damage": { "dice": "1d8", "type": "piercing" },
+    "properties": [{ "id": "ammunition", "detail": "150/600; arrow" }, "heavy", "two-handed"],
+    "mastery": "slow",
+    "icon": "vol8/icon-vol8_180"
+  },
+  {
+    "id": "musket",
+    "name": "Musket",
+    "proficiency": "martial",
+    "range": "ranged",
+    "damage": { "dice": "1d12", "type": "piercing" },
+    "properties": [{ "id": "ammunition", "detail": "40/120; bullet" }, "loading", "two-handed"],
+    "mastery": "slow",
+    "icon": "vol8/icon-vol8_185"
+  },
+  {
+    "id": "pistol",
+    "name": "Pistol",
+    "proficiency": "martial",
+    "range": "ranged",
+    "damage": { "dice": "1d10", "type": "piercing" },
+    "properties": [{ "id": "ammunition", "detail": "30/90; bullet" }, "loading"],
+    "mastery": "vex",
+    "icon": "vol8/icon-vol8_190"
+  }
+]
