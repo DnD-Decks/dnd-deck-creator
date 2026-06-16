@@ -15,7 +15,8 @@
     "lint": "biome check .",
     "format": "biome format . --write",
     "test": "vitest run",
-    "blue-ball": "biome check . && vitest run && tsc -b && vite build"
+    "blue-ball": "biome check . && vitest run && tsc -b && vite build",
+    "scripts:sync-srd-data": "node scripts/sync-srd-data/sync.mjs"
   },
   "dependencies": {
     "react": "19.2.7",
