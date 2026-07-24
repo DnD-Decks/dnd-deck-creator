@@ -5,14 +5,18 @@ import styles from "./spell-card.module.css";
 type Props = { mastery: WeaponMastery };
 
 const MASTERY_STYLE = {
-  "--school-color": "var(--school-transmutation)",
+  "--school-color": "var(--mastery-steel)",
 } as React.CSSProperties;
 
 export function WeaponMasteryCard({ mastery }: Props) {
+  const headingId = `mastery-card-${mastery.id}`;
+
   return (
-    <article className={styles.card} style={MASTERY_STYLE}>
+    <article className={styles.card} style={MASTERY_STYLE} aria-labelledby={headingId}>
       <div className={styles.titleBar}>
-        <h3 className={styles.name}>{mastery.name}</h3>
+        <h3 id={headingId} className={styles.name}>
+          {mastery.name}
+        </h3>
       </div>
 
       <div className={styles.typeLine}>Weapon Mastery</div>

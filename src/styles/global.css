@@ -26,6 +26,9 @@
   --school-illusion: #6b4f9e; /* trickery violet */
   --school-necromancy: #3d6b4a; /* deathly green */
   --school-transmutation: #b07a3a; /* change amber */
+
+  /* Non-spell card identities */
+  --mastery-steel: #4f5a68; /* weapon steel */
 }
 
 /* Reset */
@@ -42,6 +45,10 @@ body {
 
 /* Print layout */
 @media print {
+  @page {
+    margin: 10mm;
+  }
+
   body {
     margin: 0;
     padding: 0;

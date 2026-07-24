@@ -4,10 +4,14 @@ import styles from "./feat-card.module.css";
 type Props = { feat: Feat };
 
 export function FeatCard({ feat }: Props) {
+  const headingId = `feat-card-${feat.id}`;
+
   return (
-    <article className={styles.card}>
+    <article className={styles.card} aria-labelledby={headingId}>
       <header className={styles.header}>
-        <h3 className={styles.name}>{feat.name}</h3>
+        <h3 id={headingId} className={styles.name}>
+          {feat.name}
+        </h3>
         <span className={styles.source}>{feat.source}</span>
       </header>
 

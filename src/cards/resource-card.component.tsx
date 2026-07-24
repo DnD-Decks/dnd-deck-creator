@@ -22,10 +22,14 @@ export function ResourceCard({ resource }: Props) {
   const timingLabel = resource.action ? TIMING_LABELS[resource.action] : undefined;
   const metaParts = [timingLabel, `Recharges: ${REST_LABELS[resource.recharge]}`].filter(Boolean);
 
+  const headingId = `resource-card-${resource.id}`;
+
   return (
-    <article className={styles.card}>
+    <article className={styles.card} aria-labelledby={headingId}>
       <header className={styles.titleBar}>
-        <h3 className={styles.name}>{resource.name}</h3>
+        <h3 id={headingId} className={styles.name}>
+          {resource.name}
+        </h3>
         <span className={styles.usesBadge}>{usesLabel(resource.uses)}</span>
       </header>
 
