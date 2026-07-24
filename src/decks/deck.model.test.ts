@@ -112,6 +112,22 @@ test("class without vendored cards returns an empty deck", () => {
   assert.deepEqual(deck.cards, []);
 });
 
+test("paladin deck has all four card kinds (resource, feat, spell, mastery)", () => {
+  const deck = decks.get({ cls: "paladin" });
+  const kinds = new Set(deck.cards.map((card) => card.kind));
+  assert.deepEqual([...kinds].sort(), ["feat", "resource", "spell", "weapon-mastery"]);
+});
+
+test("paladin deck has the Lay on Hands resource with a 5-point pool", () => {
+  const deck = decks.get({ cls: "paladin" });
+  const layOnHands = deck.cards.find(
+    (card) => card.kind === "resource" && card.resource.id === "paladin-lay-on-hands"
+  );
+  assert.ok(layOnHands && layOnHands.kind === "resource");
+  assert.equal(layOnHands.resource.uses, 5);
+  assert.equal(layOnHands.resource.recharge, "long-rest");
+});
+
 test("barbarian deck has resource, feat, and mastery cards", () => {
   const deck = decks.get({ cls: "barbarian" });
   assert.ok(deck.cards.some((card) => card.kind === "resource"));

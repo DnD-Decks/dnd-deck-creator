@@ -1,0 +1,14 @@
+[
+  {
+    "id": "paladin-spellcasting",
+    "name": "Spellcasting",
+    "source": "Paladin Level 1",
+    "description": "You can cast Paladin spells using Charisma as your spellcasting ability. You have 2 prepared level-1 spells; whenever you finish a Long Rest, you can replace one prepared spell with another Paladin spell. You can use a Holy Symbol as your spellcasting focus."
+  },
+  {
+    "id": "paladin-weapon-mastery",
+    "name": "Weapon Mastery",
+    "source": "Paladin Level 1",
+    "description": "Your training allows you to use the mastery property of 2 weapons you are proficient with. You can change which weapons you use this with after a Long Rest. See Weapon Mastery cards for property details."
+  }
+]

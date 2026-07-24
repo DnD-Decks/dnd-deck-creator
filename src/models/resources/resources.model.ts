@@ -7,6 +7,9 @@ import druidResourcesData from "../../data/resources/druid-resources.json" with 
 import fighterResourcesData from "../../data/resources/fighter-resources.json" with {
   type: "json",
 };
+import paladinResourcesData from "../../data/resources/paladin-resources.json" with {
+  type: "json",
+};
 import wizardResourcesData from "../../data/resources/wizard-resources.json" with { type: "json" };
 
 import type { ActionTiming } from "src/models/actions/combat.model";
@@ -28,6 +31,7 @@ const CLASS_DATA: Partial<Record<CharacterClass, Resource[]>> = {
   bard: bardResourcesData as Resource[],
   cleric: clericResourcesData as Resource[],
   druid: druidResourcesData as Resource[],
+  paladin: paladinResourcesData as Resource[],
   wizard: wizardResourcesData as Resource[],
   fighter: fighterResourcesData as Resource[],
 };
