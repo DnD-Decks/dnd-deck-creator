@@ -31,7 +31,11 @@ test("fighter feats include Fighting Style and Weapon Mastery", () => {
   assert.ok(ids.includes("fighter-weapon-mastery"));
 });
 
+test("sorcerer has the Spellcasting feat", () => {
+  const ids = feats.findAll({ cls: "sorcerer" }).map((f) => f.id);
+  assert.deepEqual(ids, ["sorcerer-spellcasting"]);
+});
+
 test("class without feats returns empty array", () => {
   assert.deepEqual(feats.findAll({ cls: "warlock" }), []);
-  assert.deepEqual(feats.findAll({ cls: "sorcerer" }), []);
 });
