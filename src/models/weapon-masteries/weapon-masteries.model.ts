@@ -12,8 +12,8 @@ export type WeaponMastery = {
 const ALL: WeaponMastery[] = masteriesData as WeaponMastery[];
 
 // D&D 2024: classes with the level-1 Weapon Mastery feature get the property
-// reference cards in their deck (also Paladin, Ranger, Rogue — added with their decks).
-const MASTERY_CLASSES = new Set<CharacterClass>(["barbarian", "fighter"]);
+// reference cards in their deck (also Paladin, Ranger — added with their decks).
+const MASTERY_CLASSES = new Set<CharacterClass>(["barbarian", "fighter", "rogue"]);
 
 export const weaponMasteries = {
   list(): WeaponMastery[] {

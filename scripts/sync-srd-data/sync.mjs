@@ -134,12 +134,15 @@ for (const [cls, file] of [
   ["Cleric", "src/data/feats/cleric-feats.json"],
   ["Druid", "src/data/feats/druid-feats.json"],
   ["Fighter", "src/data/feats/fighter-feats.json"],
+  ["Rogue", "src/data/feats/rogue-feats.json"],
   ["Wizard", "src/data/feats/wizard-feats.json"],
 ]) {
   const section = sliceSection(`## **${cls}**`, `## **${cls} Subclass`);
-  const byName = new Map(featureHeadings(section).map((h) => [h.name.toLowerCase(), h.level]));
+  // straighten curly apostrophes so "Thieves' Cant" matches SRD "Thieves’ Cant"
+  const featKey = (name) => name.toLowerCase().replace(/’/g, "'");
+  const byName = new Map(featureHeadings(section).map((h) => [featKey(h.name), h.level]));
   for (const feat of readJson(file)) {
-    const srdLvl = byName.get(feat.name.toLowerCase());
+    const srdLvl = byName.get(featKey(feat.name));
     if (srdLvl === undefined) {
       missingInSrd("feature", feat.id);
       continue;
