@@ -104,12 +104,21 @@ for (const cls of CASTER_CLASSES) {
   });
 }
 
-// --- martial / empty classes ---
-
-test("class without vendored cards returns an empty deck", () => {
+test("ranger deck has all four card kinds (resource, feat, spell, mastery)", () => {
   const deck = decks.get({ cls: "ranger" });
   assert.equal(deck.cls.label, "Ranger");
-  assert.deepEqual(deck.cards, []);
+  const kinds = new Set(deck.cards.map((card) => card.kind));
+  assert.deepEqual([...kinds].sort(), ["feat", "resource", "spell", "weapon-mastery"]);
+});
+
+test("ranger deck has the Favored Enemy resource with 2 free Hunter's Mark casts", () => {
+  const deck = decks.get({ cls: "ranger" });
+  const favoredEnemy = deck.cards.find(
+    (card) => card.kind === "resource" && card.resource.id === "ranger-favored-enemy"
+  );
+  assert.ok(favoredEnemy && favoredEnemy.kind === "resource");
+  assert.equal(favoredEnemy.resource.uses, 2);
+  assert.equal(favoredEnemy.resource.recharge, "long-rest");
 });
 
 test("paladin deck has all four card kinds (resource, feat, spell, mastery)", () => {

@@ -1,6 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import { expect, test } from "vitest";
+import { decks } from "src/decks/deck.model";
+import { classes } from "src/models/class/classes.model";
+import { afterEach, expect, test, vi } from "vitest";
 import { DeckView } from "./deck-view.component.tsx";
+
+afterEach(() => {
+  vi.restoreAllMocks();
+});
 
 test("wizard deck renders a 'Cantrips' section heading", () => {
   render(<DeckView cls="wizard" />);
@@ -23,7 +29,9 @@ test("wizard deck contains the Fire Bolt spell card", () => {
   screen.getByRole("heading", { name: /fire bolt/i, level: 3 });
 });
 
-test("class without vendored cards renders the empty-state message", () => {
+test("a deck without cards renders the empty-state message", () => {
+  // every class now has vendored cards, so an empty deck only exists as a stub
+  vi.spyOn(decks, "get").mockReturnValue({ cls: classes.get({ id: "ranger" }), cards: [] });
   render(<DeckView cls="ranger" />);
   screen.getByText(/no cards vendored for ranger/i);
 });
