@@ -1,3 +1,4 @@
+import barbarianFeatsData from "../../data/feats/barbarian-feats.json" with { type: "json" };
 import fighterFeatsData from "../../data/feats/fighter-feats.json" with { type: "json" };
 import wizardFeatsData from "../../data/feats/wizard-feats.json" with { type: "json" };
 
@@ -12,6 +13,7 @@ export type Feat = {
 };
 
 const CLASS_DATA: Partial<Record<CharacterClass, Feat[]>> = {
+  barbarian: barbarianFeatsData as Feat[],
   wizard: wizardFeatsData as Feat[],
   fighter: fighterFeatsData as Feat[],
 };

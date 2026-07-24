@@ -23,7 +23,7 @@ test("wizard deck contains the Fire Bolt spell card", () => {
   screen.getByRole("heading", { name: /fire bolt/i, level: 3 });
 });
 
-test("non-caster class renders the empty-state message", () => {
-  render(<DeckView cls="barbarian" />);
-  screen.getByText(/no cards vendored for barbarian/i);
+test("class without vendored cards renders the empty-state message", () => {
+  render(<DeckView cls="monk" />);
+  screen.getByText(/no cards vendored for monk/i);
 });
