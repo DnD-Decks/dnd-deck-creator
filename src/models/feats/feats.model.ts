@@ -7,6 +7,7 @@ import monkFeatsData from "../../data/feats/monk-feats.json" with { type: "json"
 import paladinFeatsData from "../../data/feats/paladin-feats.json" with { type: "json" };
 import rangerFeatsData from "../../data/feats/ranger-feats.json" with { type: "json" };
 import rogueFeatsData from "../../data/feats/rogue-feats.json" with { type: "json" };
+import sorcererFeatsData from "../../data/feats/sorcerer-feats.json" with { type: "json" };
 import wizardFeatsData from "../../data/feats/wizard-feats.json" with { type: "json" };
 
 import type { CharacterClass } from "src/models/class/classes.model";
@@ -28,6 +29,7 @@ const CLASS_DATA: Partial<Record<CharacterClass, Feat[]>> = {
   paladin: paladinFeatsData as Feat[],
   ranger: rangerFeatsData as Feat[],
   rogue: rogueFeatsData as Feat[],
+  sorcerer: sorcererFeatsData as Feat[],
   wizard: wizardFeatsData as Feat[],
   fighter: fighterFeatsData as Feat[],
 };

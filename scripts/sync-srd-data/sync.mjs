@@ -138,6 +138,7 @@ for (const [cls, file] of [
   ["Paladin", "src/data/feats/paladin-feats.json"],
   ["Ranger", "src/data/feats/ranger-feats.json"],
   ["Rogue", "src/data/feats/rogue-feats.json"],
+  ["Sorcerer", "src/data/feats/sorcerer-feats.json"],
   ["Wizard", "src/data/feats/wizard-feats.json"],
 ]) {
   const section = sliceSection(`## **${cls}**`, `## **${cls} Subclass`);
@@ -168,6 +169,7 @@ for (const [cls, file] of [
   ["Fighter", "src/data/resources/fighter-resources.json"],
   ["Paladin", "src/data/resources/paladin-resources.json"],
   ["Ranger", "src/data/resources/ranger-resources.json"],
+  ["Sorcerer", "src/data/resources/sorcerer-resources.json"],
   ["Wizard", "src/data/resources/wizard-resources.json"],
 ]) {
   const body = sliceSection(`## **${cls}**`, `## **${cls} Subclass`).join("\n").toLowerCase();
