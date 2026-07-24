@@ -1,0 +1,14 @@
+[
+  {
+    "id": "warlock-eldritch-invocations",
+    "name": "Eldritch Invocations",
+    "source": "Warlock Level 1",
+    "description": "You have unearthed pieces of forbidden knowledge. You know 1 Eldritch Invocation of your choice, such as Pact of the Tome, which imbues you with an abiding magical ability. Whenever you gain a Warlock level, you can replace one invocation with another one for which you qualify."
+  },
+  {
+    "id": "warlock-pact-magic",
+    "name": "Pact Magic",
+    "source": "Warlock Level 1",
+    "description": "Your pact with a mysterious entity grants you the ability to cast Warlock spells using Charisma as your spellcasting ability. You know 2 cantrips and have 2 prepared level-1 spells; you can replace one cantrip or one prepared spell whenever you gain a Warlock level. You can use an Arcane Focus as your spellcasting focus."
+  }
+]

@@ -36,6 +36,13 @@ test("sorcerer has the Spellcasting feat", () => {
   assert.deepEqual(ids, ["sorcerer-spellcasting"]);
 });
 
-test("class without feats returns empty array", () => {
-  assert.deepEqual(feats.findAll({ cls: "warlock" }), []);
+test("warlock feats include Eldritch Invocations and Pact Magic", () => {
+  const ids = feats.findAll({ cls: "warlock" }).map((f) => f.id);
+  assert.ok(ids.includes("warlock-eldritch-invocations"));
+  assert.ok(ids.includes("warlock-pact-magic"));
+});
+
+test("findAll for a class absent from CLASS_DATA returns empty array", () => {
+  // cast to bypass TS — every real class has feats now, but the runtime guard must hold
+  assert.deepEqual(feats.findAll({ cls: "artificer" as "wizard" }), []);
 });
