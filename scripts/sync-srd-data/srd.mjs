@@ -94,7 +94,8 @@ export function parseSpells() {
     const comps = (stat.match(/\*\*Components?:\*\* (.+?) \*\*Duration:/) || [])[1]?.trim() ?? "";
     const dur = (stat.match(/\*\*Duration:\*\* ([^*]+)/) || [])[1]?.trim() ?? "";
 
-    spells.set(nm[1].trim().toLowerCase(), {
+    // straighten curly apostrophes so "Dragon’s Breath" keys as "dragon's breath"
+    spells.set(nm[1].trim().toLowerCase().replace(/’/g, "'"), {
       name: nm[1].trim(),
       level: meta.level,
       school: meta.school,
