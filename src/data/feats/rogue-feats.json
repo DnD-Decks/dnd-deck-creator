@@ -1,0 +1,26 @@
+[
+  {
+    "id": "rogue-expertise",
+    "name": "Expertise",
+    "source": "Rogue Level 1",
+    "description": "You gain Expertise (double proficiency bonus) in two of your skill proficiencies of your choice. Sleight of Hand and Stealth are recommended if you have proficiency in them."
+  },
+  {
+    "id": "rogue-sneak-attack",
+    "name": "Sneak Attack",
+    "source": "Rogue Level 1",
+    "description": "Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack roll if you have Advantage on the roll and the attack uses a Finesse or Ranged weapon. You don't need Advantage if an ally is within 5 feet of the target, the ally isn't Incapacitated, and you don't have Disadvantage on the roll."
+  },
+  {
+    "id": "rogue-thieves-cant",
+    "name": "Thieves' Cant",
+    "source": "Rogue Level 1",
+    "description": "You know Thieves' Cant — the secret mix of dialect, jargon, and code of the criminal underworld — and one other language of your choice."
+  },
+  {
+    "id": "rogue-weapon-mastery",
+    "name": "Weapon Mastery",
+    "source": "Rogue Level 1",
+    "description": "Your training allows you to use the mastery properties of 2 kinds of weapons of your choice with which you have proficiency, such as Daggers and Shortbows. Whenever you finish a Long Rest, you can change those weapon choices. See Weapon Mastery cards for property details."
+  }
+]
