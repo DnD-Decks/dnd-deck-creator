@@ -31,5 +31,5 @@ test("fighter Second Wind recharges on short-rest", () => {
 
 test("class without resources returns empty array", () => {
   assert.deepEqual(resources.findAll({ cls: "monk" }), []);
-  assert.deepEqual(resources.findAll({ cls: "bard" }), []);
+  assert.deepEqual(resources.findAll({ cls: "rogue" }), []);
 });

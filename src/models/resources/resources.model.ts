@@ -1,6 +1,7 @@
 import barbarianResourcesData from "../../data/resources/barbarian-resources.json" with {
   type: "json",
 };
+import bardResourcesData from "../../data/resources/bard-resources.json" with { type: "json" };
 import fighterResourcesData from "../../data/resources/fighter-resources.json" with {
   type: "json",
 };
@@ -22,6 +23,7 @@ export type Resource = {
 
 const CLASS_DATA: Partial<Record<CharacterClass, Resource[]>> = {
   barbarian: barbarianResourcesData as Resource[],
+  bard: bardResourcesData as Resource[],
   wizard: wizardResourcesData as Resource[],
   fighter: fighterResourcesData as Resource[],
 };
