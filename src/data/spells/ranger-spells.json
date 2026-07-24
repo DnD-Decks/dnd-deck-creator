@@ -1,4 +1,17 @@
 {
   "cantrips": [],
-  "level1": []
+  "level1": [
+    "alarm",
+    "animal-friendship",
+    "cure-wounds",
+    "detect-magic",
+    "detect-poison-and-disease",
+    "entangle",
+    "fog-cloud",
+    "goodberry",
+    "hunters-mark",
+    "jump",
+    "longstrider",
+    "speak-with-animals"
+  ]
 }

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ranger-mana",
+    "name": "Mana",
+    "uses": 2,
+    "recharge": "long-rest",
+    "description": "You have 2 level-1 spell slots. Expend one to cast a prepared level-1 spell. You regain all expended mana after a Long Rest."
+  },
+  {
+    "id": "ranger-favored-enemy",
+    "name": "Favored Enemy",
+    "uses": 2,
+    "recharge": "long-rest",
+    "action": "bonus-action",
+    "description": "You always have the Hunter's Mark spell prepared. Expend one use to cast it without spending mana. You regain all expended uses after a Long Rest."
+  }
+]

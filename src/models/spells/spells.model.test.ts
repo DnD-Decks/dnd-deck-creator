@@ -59,8 +59,14 @@ test("paladin level-1 spells include Bless and Cure Wounds", () => {
   assert.ok(ids.includes("cure-wounds"));
 });
 
-test("ranger (half-caster, no spells vendored) returns empty for level-1", () => {
-  assert.deepEqual(spells.findAll({ cls: "ranger", level: 1 }), []);
+test("ranger (half-caster, no cantrips in 2024 rules) returns empty for cantrips", () => {
+  assert.deepEqual(spells.findAll({ cls: "ranger", level: 0 }), []);
+});
+
+test("ranger level-1 spells include Hunter's Mark and Cure Wounds", () => {
+  const ids = spells.findAll({ cls: "ranger", level: 1 }).map((s) => s.id);
+  assert.ok(ids.includes("hunters-mark"));
+  assert.ok(ids.includes("cure-wounds"));
 });
 
 test("findAll for martial class returns empty array", () => {

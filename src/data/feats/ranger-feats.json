@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ranger-spellcasting",
+    "name": "Spellcasting",
+    "source": "Ranger Level 1",
+    "description": "You can cast Ranger spells using Wisdom as your spellcasting ability. You have 2 prepared level-1 spells; whenever you finish a Long Rest, you can replace one prepared spell with another Ranger spell. You can use a Druidic Focus as your spellcasting focus."
+  },
+  {
+    "id": "ranger-weapon-mastery",
+    "name": "Weapon Mastery",
+    "source": "Ranger Level 1",
+    "description": "Your training allows you to use the mastery property of 2 weapons you are proficient with. You can change which weapons you use this with after a Long Rest. See Weapon Mastery cards for property details."
+  }
+]

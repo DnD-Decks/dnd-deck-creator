@@ -506,6 +506,24 @@
     },
     "atHigherLevels": "When you cast this spell using a spell slot of level 3 or 4, you can maintain your Concentration on the spell for up to 8 hours. When you use a spell slot of level 5 or higher, you can maintain your Concentration on the spell for up to 24 hours."
   },
+  "hunters-mark": {
+    "id": "hunters-mark",
+    "name": "Hunter's Mark",
+    "level": 1,
+    "school": "Divination",
+    "castingTime": "1 bonus action",
+    "range": "90 ft",
+    "components": "V",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "description": "You magically mark one creature you can see within range as your quarry. Until the spell ends, you deal an extra 1d6 Force damage to the target whenever you hit it with an attack roll. You also have Advantage on any Wisdom (Perception or Survival) check you make to find it. If the target drops to 0 Hit Points before this spell ends, you can take a Bonus Action to move the mark to a new creature you can see within range.",
+    "damage": {
+      "dice": "1d6",
+      "type": ["force"]
+    },
+    "atHigherLevels": "Your Concentration can last longer with a spell slot of level 3-4 (up to 8 hours) or 5+ (up to 24 hours)."
+  },
   "ice-knife": {
     "id": "ice-knife",
     "name": "Ice Knife",
