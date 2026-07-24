@@ -134,6 +134,7 @@ for (const [cls, file] of [
   ["Cleric", "src/data/feats/cleric-feats.json"],
   ["Druid", "src/data/feats/druid-feats.json"],
   ["Fighter", "src/data/feats/fighter-feats.json"],
+  ["Monk", "src/data/feats/monk-feats.json"],
   ["Rogue", "src/data/feats/rogue-feats.json"],
   ["Wizard", "src/data/feats/wizard-feats.json"],
 ]) {

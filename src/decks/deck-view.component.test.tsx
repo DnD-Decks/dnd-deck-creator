@@ -24,6 +24,6 @@ test("wizard deck contains the Fire Bolt spell card", () => {
 });
 
 test("class without vendored cards renders the empty-state message", () => {
-  render(<DeckView cls="monk" />);
-  screen.getByText(/no cards vendored for monk/i);
+  render(<DeckView cls="ranger" />);
+  screen.getByText(/no cards vendored for ranger/i);
 });
