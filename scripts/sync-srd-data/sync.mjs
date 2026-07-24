@@ -49,13 +49,31 @@ const unverified = (cat, id, note) => findings.unverified.push({ cat, id, note }
 
 // ── SPELLS ────────────────────────────────────────────────────────────────────
 console.log("scanning spells…");
+
+// the SRD strips branded spell names — map our PHB names to their SRD equivalents
+const SRD_NAME_ALIASES = {
+  "tasha's hideous laughter": "hideous laughter",
+  "melf's acid arrow": "acid arrow",
+  "nystul's magic aura": "arcanist's magic aura",
+};
+// straighten curly apostrophes to match the srd.mjs key normalisation
+const srdKey = (name) => {
+  const k = name.toLowerCase().replace(/’/g, "'");
+  return SRD_NAME_ALIASES[k] ?? k;
+};
+
+// stat blocks corrupted by pdf→md conversion in the vendored SRD; fields verified by hand
+const KNOWN_SRD_MD_GAPS = {
+  command: "SRD md stat block truncated by page break — fields verified by hand vs pdf",
+};
+
 const srdSpells = parseSpells();
 const ourSpells = ["spells-level-0", "spells-level-1", "spells-level-2"].flatMap((f) =>
   Object.values(readJson(`src/data/spells/${f}.json`))
 );
 
 for (const sp of ourSpells) {
-  const s = srdSpells.get(sp.name.toLowerCase());
+  const s = srdSpells.get(srdKey(sp.name));
   if (!s) {
     missingInSrd("spell", sp.id);
     continue;
@@ -63,7 +81,7 @@ for (const sp of ourSpells) {
 
   // if SRD parse produced no range AND no duration, flag as parse failure not mismatch
   if (!s.range && !s.duration && sp.range) {
-    unverified("spell", sp.id, "srd stat-line parse failed");
+    unverified("spell", sp.id, KNOWN_SRD_MD_GAPS[sp.id] ?? "srd stat-line parse failed");
     continue;
   }
 
@@ -81,9 +99,9 @@ for (const sp of ourSpells) {
   if (bad.length) for (const [f, o, d] of bad) mismatch("spell", sp.id, f, o, d);
   else ok();
 }
-const ourSpellNames = new Set(ourSpells.map((s) => s.name.toLowerCase()));
+const ourSpellNames = new Set(ourSpells.map((s) => srdKey(s.name)));
 const srdSpellsL02 = [...srdSpells.values()].filter(
-  (s) => s.level <= 2 && !ourSpellNames.has(s.name.toLowerCase())
+  (s) => s.level <= 2 && !ourSpellNames.has(srdKey(s.name))
 );
 
 // ── WEAPONS ───────────────────────────────────────────────────────────────────
