@@ -184,6 +184,10 @@
   .card {
     /* ensure all cards render at print time regardless of scroll position */
     content-visibility: visible;
+    /* a card is a physical object — never slice it across a page boundary */
+    break-inside: avoid;
+    /* shadows print as gray halos around the cut line */
+    box-shadow: none;
   }
   .textBox {
     overflow: hidden;
