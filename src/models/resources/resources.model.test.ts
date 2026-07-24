@@ -29,7 +29,13 @@ test("fighter Second Wind recharges on short-rest", () => {
   assert.equal(secondWind.action, "bonus-action");
 });
 
+test("warlock mana is the Pact Magic slot: 1 use, short-rest recharge", () => {
+  const [mana] = resources.findAll({ cls: "warlock" });
+  assert.equal(mana.id, "warlock-mana");
+  assert.equal(mana.uses, 1);
+  assert.equal(mana.recharge, "short-rest");
+});
+
 test("class without resources returns empty array", () => {
-  assert.deepEqual(resources.findAll({ cls: "warlock" }), []);
   assert.deepEqual(resources.findAll({ cls: "rogue" }), []);
 });
