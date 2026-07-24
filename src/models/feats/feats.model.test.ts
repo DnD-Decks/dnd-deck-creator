@@ -33,5 +33,5 @@ test("fighter feats include Fighting Style and Weapon Mastery", () => {
 
 test("class without feats returns empty array", () => {
   assert.deepEqual(feats.findAll({ cls: "monk" }), []);
-  assert.deepEqual(feats.findAll({ cls: "bard" }), []);
+  assert.deepEqual(feats.findAll({ cls: "rogue" }), []);
 });

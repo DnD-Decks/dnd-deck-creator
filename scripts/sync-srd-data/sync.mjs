@@ -130,6 +130,7 @@ for (const w of ourWeapons) {
 console.log("scanning class features…");
 for (const [cls, file] of [
   ["Barbarian", "src/data/feats/barbarian-feats.json"],
+  ["Bard", "src/data/feats/bard-feats.json"],
   ["Fighter", "src/data/feats/fighter-feats.json"],
   ["Wizard", "src/data/feats/wizard-feats.json"],
 ]) {
@@ -149,10 +150,11 @@ for (const [cls, file] of [
 
 // ── CLASS RESOURCES ───────────────────────────────────────────────────────────
 console.log("scanning class resources…");
-const isAlias = (id) => id.startsWith("spell-slot") || id === "wizard-mana";
+const isAlias = (id) => id.startsWith("spell-slot") || id.endsWith("-mana");
 
 for (const [cls, file] of [
   ["Barbarian", "src/data/resources/barbarian-resources.json"],
+  ["Bard", "src/data/resources/bard-resources.json"],
   ["Fighter", "src/data/resources/fighter-resources.json"],
   ["Wizard", "src/data/resources/wizard-resources.json"],
 ]) {
