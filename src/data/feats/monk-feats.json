@@ -1,0 +1,14 @@
+[
+  {
+    "id": "monk-martial-arts",
+    "name": "Martial Arts",
+    "source": "Monk Level 1",
+    "description": "While unarmed or wielding only Monk weapons (Simple Melee weapons and Light Martial Melee weapons) and wearing no armor or Shield: you can roll 1d6 in place of the normal damage of your Unarmed Strike or Monk weapons, you can use Dexterity instead of Strength for their attack and damage rolls (and for Grapple/Shove save DCs), and you can make an Unarmed Strike as a Bonus Action."
+  },
+  {
+    "id": "monk-unarmored-defense",
+    "name": "Unarmored Defense",
+    "source": "Monk Level 1",
+    "description": "While you aren't wearing armor or wielding a Shield, your base Armor Class equals 10 plus your Dexterity and Wisdom modifiers."
+  }
+]

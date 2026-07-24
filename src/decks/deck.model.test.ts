@@ -107,8 +107,8 @@ for (const cls of CASTER_CLASSES) {
 // --- martial / empty classes ---
 
 test("class without vendored cards returns an empty deck", () => {
-  const deck = decks.get({ cls: "monk" });
-  assert.equal(deck.cls.label, "Monk");
+  const deck = decks.get({ cls: "ranger" });
+  assert.equal(deck.cls.label, "Ranger");
   assert.deepEqual(deck.cards, []);
 });
 
