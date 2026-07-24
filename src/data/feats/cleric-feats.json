@@ -1,0 +1,14 @@
+[
+  {
+    "id": "cleric-spellcasting",
+    "name": "Spellcasting",
+    "source": "Cleric Level 1",
+    "description": "You can cast Cleric spells using Wisdom as your spellcasting ability. You know 3 cantrips and have 4 prepared level-1 spells; you can replace one prepared spell whenever you gain a Cleric level. You can use a Holy Symbol as your spellcasting focus."
+  },
+  {
+    "id": "cleric-divine-order",
+    "name": "Divine Order",
+    "source": "Cleric Level 1",
+    "description": "You have dedicated yourself to a sacred role of your choice. Protector: trained for battle, you gain proficiency with Martial weapons and training with Heavy armor. Thaumaturge: you know one extra cantrip from the Cleric spell list, and you gain a bonus to Intelligence (Arcana or Religion) checks equal to your Wisdom modifier (minimum +1)."
+  }
+]
