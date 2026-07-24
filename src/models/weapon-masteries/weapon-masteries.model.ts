@@ -11,8 +11,9 @@ export type WeaponMastery = {
 
 const ALL: WeaponMastery[] = masteriesData as WeaponMastery[];
 
-// D&D 2024: Weapon Mastery is exclusive to Fighter; other classes do not gain it.
-const MASTERY_CLASSES = new Set<CharacterClass>(["fighter"]);
+// D&D 2024: classes with the level-1 Weapon Mastery feature get the property
+// reference cards in their deck (also Paladin, Ranger, Rogue — added with their decks).
+const MASTERY_CLASSES = new Set<CharacterClass>(["barbarian", "fighter"]);
 
 export const weaponMasteries = {
   list(): WeaponMastery[] {

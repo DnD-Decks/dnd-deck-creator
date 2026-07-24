@@ -1,0 +1,14 @@
+[
+  {
+    "id": "barbarian-unarmored-defense",
+    "name": "Unarmored Defense",
+    "source": "Barbarian Level 1",
+    "description": "While you aren't wearing any armor, your base Armor Class equals 10 plus your Dexterity and Constitution modifiers. You can use a Shield and still gain this benefit."
+  },
+  {
+    "id": "barbarian-weapon-mastery",
+    "name": "Weapon Mastery",
+    "source": "Barbarian Level 1",
+    "description": "Your training allows you to use the mastery properties of 2 kinds of Simple or Martial Melee weapons of your choice, such as Greataxes and Handaxes. Whenever you finish a Long Rest, you can change one of those weapon choices. See Weapon Mastery cards for property details."
+  }
+]

@@ -107,7 +107,14 @@ for (const cls of CASTER_CLASSES) {
 // --- martial / empty classes ---
 
 test("class without vendored cards returns an empty deck", () => {
-  const deck = decks.get({ cls: "barbarian" });
-  assert.equal(deck.cls.label, "Barbarian");
+  const deck = decks.get({ cls: "monk" });
+  assert.equal(deck.cls.label, "Monk");
   assert.deepEqual(deck.cards, []);
+});
+
+test("barbarian deck has resource, feat, and mastery cards", () => {
+  const deck = decks.get({ cls: "barbarian" });
+  assert.ok(deck.cards.some((card) => card.kind === "resource"));
+  assert.ok(deck.cards.some((card) => card.kind === "feat"));
+  assert.ok(deck.cards.some((card) => card.kind === "weapon-mastery"));
 });
