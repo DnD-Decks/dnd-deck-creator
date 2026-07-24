@@ -1,0 +1,17 @@
+[
+  {
+    "id": "paladin-mana",
+    "name": "Mana",
+    "uses": 2,
+    "recharge": "long-rest",
+    "description": "You have 2 level-1 spell slots. Expend one to cast a prepared level-1 spell. You regain all expended mana after a Long Rest."
+  },
+  {
+    "id": "paladin-lay-on-hands",
+    "name": "Lay on Hands",
+    "uses": 5,
+    "recharge": "long-rest",
+    "action": "bonus-action",
+    "description": "You have a pool of healing power with 5 Hit Points per Paladin level (each use box is 1 HP of the pool). As a Bonus Action, touch a creature to restore any number of Hit Points remaining in the pool. You can instead expend 5 HP from the pool to remove the Poisoned condition from the creature. The pool refills after a Long Rest."
+  }
+]

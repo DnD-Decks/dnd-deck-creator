@@ -1,4 +1,15 @@
 {
   "cantrips": [],
-  "level1": []
+  "level1": [
+    "bless",
+    "command",
+    "cure-wounds",
+    "detect-evil-and-good",
+    "detect-magic",
+    "detect-poison-and-disease",
+    "heroism",
+    "protection-from-evil-and-good",
+    "purify-food-and-drink",
+    "shield-of-faith"
+  ]
 }
