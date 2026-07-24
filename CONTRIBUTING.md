@@ -12,14 +12,15 @@
 3. **Small PRs.** One concern per PR. A PR that touches card layout, data loading, *and* a new deck composition is three PRs.
 4. **Plan mode first** — see `AGENTS.md` for triggers.
 
-## Adding a new card category
+## Adding a new card kind
 
-1. Create `src/cards/<CategoryName>/` with component + CSS module + test.
-2. Export from `src/cards/index.ts`.
-3. Document the new category in `ARCHITECTURE.md` (Cards table).
+Follow the step-by-step in `ARCHITECTURE.md` § *Adding a new card kind* (data → model → `DeckCard` union → deck assembly → `deck-view` switches → component). In short: cards live flat as `src/cards/<kind>-card.component.tsx` + CSS module + co-located test — there are no per-category folders and no barrel file.
 
 ## Adding a new class deck
 
-1. Create `src/decks/<class>/index.tsx`.
-2. Import the relevant cards and the class data from `src/data/`.
-3. Register the deck in the top-level deck router.
+Decks are data-driven — there is no per-class UI code.
+
+1. Author `src/data/feats/<class>-feats.json` and, if the class has level-1 resources, `src/data/resources/<class>-resources.json` (follow the `wizard-*`/`fighter-*` files).
+2. Register the JSON in the model's `CLASS_DATA` map: `src/models/feats/feats.model.ts` and `src/models/resources/resources.model.ts`. Spell lists work the same way via `src/data/spells/<class>-spells.json` + `src/models/spells/spells.model.ts`.
+3. Verify content against `reference/srd/SRD_5.2.1.md` (D&D 5.5e / 2024 rules) and run `pnpm scripts:sync-srd-data` — no new mismatches.
+4. `src/decks/deck.model.ts` assembles the deck automatically from the models; the class selector already lists all 12 classes.
