@@ -8,10 +8,10 @@
 
 | Category | Kind | Layout | Status | Example |
 |---|---|---|---|---|
-| Resource | `resource` | vertical | ✓ Wizard L1, Fighter L1 | "Mana ×2", "Second Wind ×1" |
-| Class feature / feat | `feat` | horizontal (landscape) | ✓ Wizard L1, Fighter L1 | "Arcane Recovery", "Fighting Style" |
-| Spell | `spell` | vertical | ✓ all caster classes (L1 only) | "Fireball" (Wizard) |
-| Weapon mastery | `weapon-mastery` | vertical (spell layout) | ✓ Fighter L1 (all 8 properties) | "Cleave", "Graze" |
+| Resource | `resource` | vertical | ✓ 10 classes with L1 resources (monk, rogue: none) | "Mana ×2", "Second Wind ×1" |
+| Class feature / feat | `feat` | horizontal (landscape) | ✓ all 12 classes (L1) | "Arcane Recovery", "Fighting Style" |
+| Spell | `spell` | vertical | ✓ all 8 caster classes (L1 only) | "Fireball" (Wizard) |
+| Weapon mastery | `weapon-mastery` | vertical (spell layout) | ✓ 5 mastery classes (all 8 properties) | "Cleave", "Graze" |
 | Companion stats | `companion` | — | deferred | Ranger's beast companion |
 
 Spells shared between classes are intentionally duplicated — visual class identity is in card style, not shared components. Decks show cantrips + level-1 only (`SPELL_LEVELS = [0, 1]` in `deck.model.ts`). Section order: Resources → Class Features → Spells → Weapon Masteries.
@@ -51,14 +51,13 @@ JSON for spells is vendored from sibling repo [`dnd-beginner-character-sheet-5e-
 | Path | Contents |
 |---|---|
 | `spells/spells-level-0.json` | 33 cantrips, keyed by id |
-| `spells/spells-level-1.json` | 54 level-1 spells, keyed by id |
+| `spells/spells-level-1.json` | 55 level-1 spells, keyed by id |
 | `spells/spells-level-2.json` | 35 level-2 spells, keyed by id (vendored; not in L1 decks) |
 | `spells/{class}-spells.json` | Spell id lists for 8 caster classes |
 | `classes/<cls>.json` | 12 class files: label, icon, hitDie, saves, proficiencies |
-| `resources/wizard-resources.json` | Wizard L1 resource: Mana (2 spell slots) |
-| `resources/fighter-resources.json` | Fighter L1 resource: Second Wind |
-| `feats/wizard-feats.json` | Wizard L1 features: Spellcasting, Ritual Adept, Arcane Recovery |
-| `feats/fighter-feats.json` | Fighter L1 features: Fighting Style, Weapon Mastery |
+| `classes/class-resources.json` | Level-progression resource data for all 12 classes (consumed by `class-resources.model.ts`) |
+| `resources/<cls>-resources.json` | L1 resources for 10 classes (monk, rogue: none) |
+| `feats/<cls>-feats.json` | L1 class features for all 12 classes |
 | `weapon-masteries/weapon-masteries.json` | All 8 PHB 2024 mastery properties (class-agnostic) |
 
 ### Deferred
@@ -86,7 +85,7 @@ Pure model tests (`*.model.test.ts`) have no DOM dependency and can use either v
 
 `src/models/` is the typed bridge between raw JSON (`src/data/`) and components. **Components never touch JSON directly** — they call typed methods on model objects.
 
-Each model module exports a single object (named after the entity) with a small, stable API:
+Each model module exports a single object (named after the entity) with a subset of a small, stable API (not every module needs all four methods):
 
 | Method | Returns |
 |---|---|

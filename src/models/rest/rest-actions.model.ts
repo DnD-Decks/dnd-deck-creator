@@ -9,7 +9,7 @@ export type RestAction = {
 };
 
 const DATA = restActionsData as RestAction[];
-const BY_ID = new Map(DATA.map((a) => [a.id, a]));
+const BY_ID = new Map<string, RestAction>(DATA.map((a) => [a.id, a]));
 
 export const restActions = {
   get({ id }: { id: RestType }): RestAction {
@@ -19,10 +19,10 @@ export const restActions = {
   },
 
   find({ id }: { id: string }): RestAction | undefined {
-    return BY_ID.get(id as RestType);
+    return BY_ID.get(id);
   },
 
-  list(): RestAction[] {
+  list(): readonly RestAction[] {
     return DATA;
   },
 };

@@ -24,7 +24,7 @@ const DATA: WeaponProperty[] = Object.entries(RAW).map(([id, description]) => ({
   id: id as WeaponPropertyId,
   description,
 }));
-const BY_ID = new Map(DATA.map((p) => [p.id, p]));
+const BY_ID = new Map<string, WeaponProperty>(DATA.map((p) => [p.id, p]));
 
 export const weaponProperties = {
   get({ id }: { id: WeaponPropertyId }): WeaponProperty {
@@ -34,10 +34,10 @@ export const weaponProperties = {
   },
 
   find({ id }: { id: string }): WeaponProperty | undefined {
-    return BY_ID.get(id as WeaponPropertyId);
+    return BY_ID.get(id);
   },
 
-  list(): WeaponProperty[] {
+  list(): readonly WeaponProperty[] {
     return DATA;
   },
 };

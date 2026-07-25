@@ -17,7 +17,7 @@ const DATA: ProficiencyDetails[] = (Object.keys(RAW) as ProficiencyKey[]).map((i
   id,
   ...RAW[id],
 }));
-const BY_ID = new Map(DATA.map((p) => [p.id, p]));
+const BY_ID = new Map<string, ProficiencyDetails>(DATA.map((p) => [p.id, p]));
 
 export const proficiencyDetails = {
   get({ id }: { id: ProficiencyKey }): ProficiencyDetails {
@@ -27,10 +27,10 @@ export const proficiencyDetails = {
   },
 
   find({ id }: { id: string }): ProficiencyDetails | undefined {
-    return BY_ID.get(id as ProficiencyKey);
+    return BY_ID.get(id);
   },
 
-  list(): ProficiencyDetails[] {
+  list(): readonly ProficiencyDetails[] {
     return DATA;
   },
 };

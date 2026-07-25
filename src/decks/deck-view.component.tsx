@@ -57,7 +57,7 @@ function renderCard(card: DeckCard) {
 }
 
 /** Group cards into ordered sections; deck.model emits cards grouped by section. */
-function sections(cards: DeckCard[]) {
+function sections(cards: readonly DeckCard[]) {
   const bySection = new Map<string, DeckCard[]>();
   for (const card of cards) {
     const label = sectionLabel(card);

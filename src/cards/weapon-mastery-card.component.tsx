@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { WeaponMastery } from "src/models/weapon-masteries/weapon-masteries.model";
 // borrows spell-card stylesheet; no dedicated weapon-mastery layout exists yet
 import styles from "./spell-card.module.css";
@@ -6,7 +7,7 @@ type Props = { mastery: WeaponMastery };
 
 const MASTERY_STYLE = {
   "--school-color": "var(--mastery-steel)",
-} as React.CSSProperties;
+} as CSSProperties;
 
 export function WeaponMasteryCard({ mastery }: Props) {
   const headingId = `mastery-card-${mastery.id}`;

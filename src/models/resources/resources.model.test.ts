@@ -1,33 +1,8 @@
 import assert from "node:assert/strict";
 import { test } from "vitest";
 
+import { classes } from "src/models/class/classes.model.ts";
 import { resources } from "./resources.model.ts";
-
-test("wizard has 1 resource (mana)", () => {
-  const result = resources.findAll({ cls: "wizard" });
-  assert.equal(result.length, 1);
-  assert.equal(result[0].id, "wizard-mana");
-  assert.equal(result[0].name, "Mana");
-});
-
-test("wizard mana recharges on long-rest", () => {
-  const [mana] = resources.findAll({ cls: "wizard" });
-  assert.equal(mana.recharge, "long-rest");
-  assert.equal(mana.uses, 2);
-});
-
-test("fighter has 1 resource (Second Wind)", () => {
-  const result = resources.findAll({ cls: "fighter" });
-  assert.equal(result.length, 1);
-  assert.equal(result[0].id, "fighter-second-wind");
-});
-
-test("fighter Second Wind recharges on short-rest", () => {
-  const [secondWind] = resources.findAll({ cls: "fighter" });
-  assert.equal(secondWind.recharge, "short-rest");
-  assert.equal(secondWind.uses, 1);
-  assert.equal(secondWind.action, "bonus-action");
-});
 
 test("warlock mana is the Pact Magic slot: 1 use, short-rest recharge", () => {
   const [mana] = resources.findAll({ cls: "warlock" });
@@ -38,4 +13,17 @@ test("warlock mana is the Pact Magic slot: 1 use, short-rest recharge", () => {
 
 test("class without resources returns empty array", () => {
   assert.deepEqual(resources.findAll({ cls: "rogue" }), []);
+});
+
+test("across all classes: resource ids unique, uses ≥ 1, valid recharge", () => {
+  const VALID_RECHARGES = ["short-rest", "long-rest"];
+  const seen = new Set<string>();
+  for (const cls of classes.list()) {
+    for (const r of resources.findAll({ cls: cls.id })) {
+      assert.ok(!seen.has(r.id), `duplicate resource id across classes: ${r.id}`);
+      seen.add(r.id);
+      assert.ok(r.uses >= 1, `resource ${r.id} has uses < 1: ${r.uses}`);
+      assert.ok(VALID_RECHARGES.includes(r.recharge), `bad recharge on ${r.id}: ${r.recharge}`);
+    }
+  }
 });

@@ -22,7 +22,7 @@ const DATA: WeaponMasteryDetails[] = (Object.keys(RAW) as WeaponMasteryName[]).m
   id,
   description: RAW[id],
 }));
-const BY_ID = new Map(DATA.map((m) => [m.id, m]));
+const BY_ID = new Map<string, WeaponMasteryDetails>(DATA.map((m) => [m.id, m]));
 
 export const weaponMastery = {
   get({ id }: { id: WeaponMasteryName }): WeaponMasteryDetails {
@@ -32,10 +32,10 @@ export const weaponMastery = {
   },
 
   find({ id }: { id: string }): WeaponMasteryDetails | undefined {
-    return BY_ID.get(id as WeaponMasteryName);
+    return BY_ID.get(id);
   },
 
-  list(): WeaponMasteryDetails[] {
+  list(): readonly WeaponMasteryDetails[] {
     return DATA;
   },
 };

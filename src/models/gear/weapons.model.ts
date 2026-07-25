@@ -60,7 +60,7 @@ export type Weapon = {
 };
 
 const DATA = weaponsData as Weapon[];
-const BY_ID = new Map(DATA.map((w) => [w.id, w]));
+const BY_ID = new Map<string, Weapon>(DATA.map((w) => [w.id, w]));
 
 export const weapons = {
   get({ id }: { id: WeaponId }): Weapon {
@@ -70,10 +70,10 @@ export const weapons = {
   },
 
   find({ id }: { id: string }): Weapon | undefined {
-    return BY_ID.get(id as WeaponId);
+    return BY_ID.get(id);
   },
 
-  list(): Weapon[] {
+  list(): readonly Weapon[] {
     return DATA;
   },
 };
