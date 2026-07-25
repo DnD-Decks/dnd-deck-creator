@@ -18,7 +18,7 @@ export type DeckCard =
   | { kind: "feat"; feat: Feat }
   | { kind: "weapon-mastery"; mastery: WeaponMastery };
 
-export type Deck = { cls: ClassDetails; cards: DeckCard[] };
+export type Deck = { cls: ClassDetails; cards: readonly DeckCard[] };
 
 const SPELL_LEVELS: SpellLevel[] = [0, 1];
 

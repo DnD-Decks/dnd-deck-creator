@@ -22,11 +22,11 @@ const MASTERY_CLASSES = new Set<CharacterClass>([
 ]);
 
 export const weaponMasteries = {
-  list(): WeaponMastery[] {
+  list(): readonly WeaponMastery[] {
     return ALL;
   },
 
-  findAll({ cls }: { cls: CharacterClass }): WeaponMastery[] {
+  findAll({ cls }: { cls: CharacterClass }): readonly WeaponMastery[] {
     return MASTERY_CLASSES.has(cls) ? ALL : [];
   },
 };

@@ -29,7 +29,7 @@ export type SkillDefinition = {
 };
 
 const DATA = skillsData as SkillDefinition[];
-const BY_NAME = new Map(DATA.map((s) => [s.name, s]));
+const BY_NAME = new Map<string, SkillDefinition>(DATA.map((s) => [s.name, s]));
 
 export const skills = {
   get({ name }: { name: SkillName }): SkillDefinition {
@@ -39,10 +39,10 @@ export const skills = {
   },
 
   find({ name }: { name: string }): SkillDefinition | undefined {
-    return BY_NAME.get(name as SkillName);
+    return BY_NAME.get(name);
   },
 
-  list(): SkillDefinition[] {
+  list(): readonly SkillDefinition[] {
     return DATA;
   },
 

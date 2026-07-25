@@ -31,7 +31,7 @@ export type Armor = {
 } & ArmorDexBonusCap;
 
 const DATA = armorData as Armor[];
-const BY_ID = new Map(DATA.map((a) => [a.id, a]));
+const BY_ID = new Map<string, Armor>(DATA.map((a) => [a.id, a]));
 
 export const armor = {
   get({ id }: { id: ArmorId }): Armor {
@@ -41,10 +41,10 @@ export const armor = {
   },
 
   find({ id }: { id: string }): Armor | undefined {
-    return BY_ID.get(id as ArmorId);
+    return BY_ID.get(id);
   },
 
-  list(): Armor[] {
+  list(): readonly Armor[] {
     return DATA;
   },
 };

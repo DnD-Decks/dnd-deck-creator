@@ -5,7 +5,7 @@ import styles from "./resource-card.module.css";
 
 type Props = { resource: Resource };
 
-const usesLabel = (uses: number) => (uses === 1 ? "×1" : `×${uses}`);
+const usesLabel = (uses: number) => `×${uses}`;
 
 const REST_LABELS: Record<RestType, string> = {
   "short-rest": "Short Rest",
