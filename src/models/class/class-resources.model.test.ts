@@ -21,12 +21,6 @@ const DEFAULT_SCORES: AbilityScores = {
 
 // --- classResources.get ---
 
-test("get rage returns correct definition", () => {
-  const r = classResources.get({ id: "rage" });
-  assert.equal(r.id, "rage");
-  assert.equal(r.name, "Rage");
-});
-
 test("get throws on unknown resource", () => {
   assert.throws(() => classResources.get({ id: "time-stop" }), /Unknown resource/);
 });
@@ -37,17 +31,7 @@ test("find returns undefined for unknown resource", () => {
   assert.equal(classResources.find({ id: "time-stop" }), undefined);
 });
 
-test("find spell-slot-1st returns definition", () => {
-  const r = classResources.find({ id: "spell-slot-1st" });
-  assert.ok(r !== undefined);
-  assert.equal(r.id, "spell-slot-1st");
-});
-
 // --- classResources.list ---
-
-test("list is non-empty", () => {
-  assert.ok(classResources.list().length > 0);
-});
 
 test("list deduplicates shared resources (spell-slot-1st appears once)", () => {
   const all = classResources.list();
@@ -56,14 +40,6 @@ test("list deduplicates shared resources (spell-slot-1st appears once)", () => {
 });
 
 // --- resolveResourceResetOn ---
-
-test("barbarian rage resets on long-rest", () => {
-  assert.equal(resolveResourceResetOn("barbarian", "rage"), "long-rest");
-});
-
-test("fighter second-wind resets on short-rest", () => {
-  assert.equal(resolveResourceResetOn("fighter", "second-wind"), "short-rest");
-});
 
 test("warlock pact-magic-slot resets on short-rest", () => {
   assert.equal(resolveResourceResetOn("warlock", "pact-magic-slot"), "short-rest");

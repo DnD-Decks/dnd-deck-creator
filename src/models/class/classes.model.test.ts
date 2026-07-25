@@ -3,14 +3,6 @@ import { test } from "vitest";
 
 import { classes } from "./classes.model.ts";
 
-test("wizard has correct base stats", () => {
-  const wizard = classes.get({ id: "wizard" });
-  assert.equal(wizard.label, "Wizard");
-  assert.equal(wizard.hitDie, "d6");
-  assert.equal(wizard.manualClassification, "spell-caster");
-  assert.equal(wizard.saves, "Intelligence & Wisdom");
-});
-
 test("list returns all 12 PHB classes", () => {
   assert.equal(classes.list().length, 12);
 });

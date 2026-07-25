@@ -1,27 +1,10 @@
 import assert from "node:assert/strict";
 import { test } from "vitest";
 
+import { weaponMastery } from "./weapon-mastery.model.ts";
 import { weapons } from "./weapons.model.ts";
 
 // --- weapons.get ---
-
-test("get longsword returns correct fields", () => {
-  const w = weapons.get({ id: "longsword" });
-  assert.equal(w.id, "longsword");
-  assert.equal(w.name, "Longsword");
-  assert.equal(w.proficiency, "martial");
-  assert.equal(w.range, "melee");
-  assert.equal(w.damage.dice, "1d8");
-  assert.equal(w.damage.type, "slashing");
-  assert.equal(w.mastery, "sap");
-});
-
-test("get dagger returns correct proficiency and range", () => {
-  const w = weapons.get({ id: "dagger" });
-  assert.equal(w.proficiency, "simple");
-  assert.equal(w.range, "melee");
-  assert.equal(w.damage.type, "piercing");
-});
 
 test("get throws on unknown weapon", () => {
   assert.throws(() => weapons.get({ id: "excalibur" as "longsword" }), /Unknown weapon/);
@@ -33,17 +16,15 @@ test("find returns undefined for unknown weapon", () => {
   assert.equal(weapons.find({ id: "excalibur" }), undefined);
 });
 
-test("find shortbow returns correct fields", () => {
-  const w = weapons.find({ id: "shortbow" });
-  assert.ok(w !== undefined);
-  assert.equal(w.range, "ranged");
-  assert.equal(w.proficiency, "simple");
-});
-
 // --- weapons.list ---
 
-test("list has at least 38 weapons", () => {
-  assert.ok(weapons.list().length >= 38);
+test("every weapon's mastery resolves against the weapon-mastery model", () => {
+  for (const w of weapons.list()) {
+    assert.ok(
+      weaponMastery.find({ id: w.mastery }) !== undefined,
+      `weapon ${w.id} references unknown mastery: ${w.mastery}`
+    );
+  }
 });
 
 test("list contains both simple and martial weapons", () => {

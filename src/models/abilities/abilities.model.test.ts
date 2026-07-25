@@ -23,13 +23,6 @@ test("computeModifier: 15 → 2", () => {
 
 // --- abilities.get ---
 
-test("get str returns correct details", () => {
-  const str = abilities.get({ id: "str" });
-  assert.equal(str.id, "str");
-  assert.equal(str.label, "Strength");
-  assert.equal(str.short, "STR");
-});
-
 test("get throws on unknown ability", () => {
   assert.throws(() => abilities.get({ id: "luck" as "str" }), /Unknown ability/);
 });

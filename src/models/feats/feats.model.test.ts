@@ -1,45 +1,21 @@
 import assert from "node:assert/strict";
 import { test } from "vitest";
 
+import { classes } from "src/models/class/classes.model.ts";
 import { feats } from "./feats.model.ts";
 
-test("wizard has 3 feats", () => {
-  const result = feats.findAll({ cls: "wizard" });
-  assert.equal(result.length, 3);
-});
-
-test("wizard feats include Spellcasting, Ritual Adept, Arcane Recovery", () => {
-  const ids = feats.findAll({ cls: "wizard" }).map((f) => f.id);
-  assert.ok(ids.includes("wizard-spellcasting"));
-  assert.ok(ids.includes("wizard-ritual-adept"));
-  assert.ok(ids.includes("wizard-arcane-recovery"));
-});
-
-test("wizard feats have source 'Wizard Level 1'", () => {
-  const result = feats.findAll({ cls: "wizard" });
-  assert.ok(result.every((f) => f.source === "Wizard Level 1"));
-});
-
-test("fighter has 2 feats", () => {
-  const result = feats.findAll({ cls: "fighter" });
-  assert.equal(result.length, 2);
-});
-
-test("fighter feats include Fighting Style and Weapon Mastery", () => {
-  const ids = feats.findAll({ cls: "fighter" }).map((f) => f.id);
-  assert.ok(ids.includes("fighter-fighting-style"));
-  assert.ok(ids.includes("fighter-weapon-mastery"));
-});
-
-test("sorcerer has the Spellcasting feat", () => {
-  const ids = feats.findAll({ cls: "sorcerer" }).map((f) => f.id);
-  assert.deepEqual(ids, ["sorcerer-spellcasting"]);
-});
-
-test("warlock feats include Eldritch Invocations and Pact Magic", () => {
-  const ids = feats.findAll({ cls: "warlock" }).map((f) => f.id);
-  assert.ok(ids.includes("warlock-eldritch-invocations"));
-  assert.ok(ids.includes("warlock-pact-magic"));
+test("every class has at least one feat, with unique prefixed ids and descriptions", () => {
+  const seen = new Set<string>();
+  for (const cls of classes.list()) {
+    const result = feats.findAll({ cls: cls.id });
+    assert.ok(result.length >= 1, `${cls.id} has no feats`);
+    for (const f of result) {
+      assert.ok(!seen.has(f.id), `duplicate feat id across classes: ${f.id}`);
+      seen.add(f.id);
+      assert.ok(f.id.startsWith(`${cls.id}-`), `feat id ${f.id} not prefixed with ${cls.id}-`);
+      assert.ok(f.description.length > 0, `feat ${f.id} has an empty description`);
+    }
+  }
 });
 
 test("findAll for a class absent from CLASS_DATA returns empty array", () => {

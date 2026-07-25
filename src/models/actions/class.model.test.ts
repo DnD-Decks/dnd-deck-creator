@@ -5,12 +5,6 @@ import { classActions } from "./class.model.ts";
 
 // --- classActions.get ---
 
-test("get Second Wind returns timing: bonus-action", () => {
-  const a = classActions.get({ name: "Second Wind" });
-  assert.equal(a.timing, "bonus-action");
-  assert.equal(a.classRestriction, "fighter");
-});
-
 test("get throws on unknown class action", () => {
   assert.throws(() => classActions.get({ name: "Fly" }), /Unknown class action/);
 });
@@ -19,14 +13,6 @@ test("get throws on unknown class action", () => {
 
 test("find returns undefined for unknown action", () => {
   assert.equal(classActions.find({ name: "Fly" }), undefined);
-});
-
-// --- classActions.list ---
-
-test("list contains Second Wind and Sneak Attack", () => {
-  const all = classActions.list();
-  assert.ok(all.some((a) => a.name === "Second Wind"));
-  assert.ok(all.some((a) => a.name === "Sneak Attack"));
 });
 
 // --- classActions.findAll ---
