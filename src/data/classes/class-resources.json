@@ -130,7 +130,7 @@
       {
         "id": "lay-on-hands",
         "name": "Lay on Hands",
-        "description": "Touch a creature to restore hit points from your healing pool, or spend 5 points to cure one disease or neutralize one poison.",
+        "description": "Touch a creature to restore hit points from your healing pool, or spend 5 points to remove the Poisoned condition.",
         "resetOn": "long-rest",
         "icon": "vol5/icon-vol5_35",
         "progression": { "1": 5, "2": 10, "3": 15, "4": 20, "5": 25 }
