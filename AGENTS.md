@@ -8,7 +8,8 @@
 - **Filenames**: always `kebab-case`. Never PascalCase or camelCase file names.
 - **Filename pattern**: `<module>.<role>.ts(x)` — e.g. `wizard.controller.ts`, `spell.service.ts`, `feat-card.component.tsx`. The module comes first, the role second.
 - import: use absolute `src/*` paths.
-- use relative imports only for same-folder files (e.g. CSS modules: `./Card.module.css`).
+- use relative imports only for same-folder files (e.g. CSS modules: `./spell-card.module.css`).
+- sanctioned exception: **runtime** imports in modules that also run under `node:test` use relative paths with the `.ts` extension (the `src/*` alias only exists for tsc and vite) — see `src/decks/deck.model.ts`. Type-only imports keep the `src/*` form.
 - use `import type` for type-only imports.
 - prefer `type` for data shapes; reserve `interface` for semantic behavior contracts (e.g. `Runnable { run() }`).
 - Prefer plain functions and closures over `class` syntax.
@@ -19,7 +20,7 @@
 ### Folder layout
 
 - Forbidden folders: `src/utils/`, `src/types/`, `src/helpers/`. No catch-alls.
-- Name every folder by its domain. Types live with their domain 
+- Name every folder by its domain. Types live with their domain.
 - If a helper doesn't belong to an existing domain folder, prefer folding it into the model it serves as a projection over creating a standalone file.
 - When a standalone file is genuinely needed, pick a per-domain folder name.
 - Accepted non-domain folders: `src/data/` (JSON data files), `src/services/` (I/O), `src/lib/` (low-level primitives), `src/styles/` (global CSS, print layout).

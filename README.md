@@ -1,6 +1,6 @@
 # dnd-deck-designer
 
-A static web tool for laying out custom **D&D 5.5 (2024)** card decks per PHB class — screen preview and professional printing.
+A static web tool for laying out custom **D&D 2024 (5.5e, SRD 5.2.1)** card decks per PHB class — screen preview and professional printing.
 
 ## Docs
 
@@ -9,7 +9,7 @@ A static web tool for laying out custom **D&D 5.5 (2024)** card decks per PHB cl
 
 ## Tech
 
-React 19 · Vite · TypeScript · CSS Modules · pnpm · biome · node:test
+React 19 · Vite · TypeScript · CSS Modules · pnpm · biome · vitest / node:test
 
 ## Data
 
@@ -21,4 +21,4 @@ The verbatim SRD 5.2.1 PDF (CC-BY-4.0 official release) is committed under [`ref
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+`MIT AND CC-BY-4.0` — code under MIT (see [LICENSE](LICENSE)); vendored SRD 5.2.1 game content under CC-BY-4.0 (see [NOTICE](NOTICE)).

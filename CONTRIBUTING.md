@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- **Node ≥ 22** — required for the built-in `node:test` runner and native `fetch`.
+- **Node ≥ 22.18** (see `engines` in `package.json`) — required for the built-in `node:test` runner executing TypeScript directly (type stripping on by default).
 - **pnpm** — install with `npm i -g pnpm` or via `corepack enable`.
 
 ## Workflow
@@ -20,7 +20,7 @@ Follow the step-by-step in `ARCHITECTURE.md` § *Adding a new card kind* (data �
 
 Decks are data-driven — there is no per-class UI code.
 
-1. Author `src/data/feats/<class>-feats.json` and, if the class has level-1 resources, `src/data/resources/<class>-resources.json` (follow the `wizard-*`/`fighter-*` files).
+1. Author `src/data/feats/<class>-feats.json` and, if the class has level-1 resources, `src/data/resources/<class>-resources.json` (follow any existing class's files — all 12 L1 decks are complete and serve as examples).
 2. Register the JSON in the model's `CLASS_DATA` map: `src/models/feats/feats.model.ts` and `src/models/resources/resources.model.ts`. Spell lists work the same way via `src/data/spells/<class>-spells.json` + `src/models/spells/spells.model.ts`.
-3. Verify content against `reference/srd/SRD_5.2.1.md` (D&D 5.5e / 2024 rules) and run `pnpm scripts:sync-srd-data` — no new mismatches.
+3. Verify content against `reference/srd/SRD_5.2.1.md` (D&D 2024 / 5.5e rules) and run `pnpm scripts:sync-srd-data` — no new mismatches.
 4. `src/decks/deck.model.ts` assembles the deck automatically from the models; the class selector already lists all 12 classes.
