@@ -39,7 +39,7 @@ Print the rendered prompt in the chat inside a fenced code block, ready to copy-
 Check for an existing open issue:
 
 ```sh
-gh issue list --state open --label asset --search "[asset]: <name>" --json number,title
+gh issue list --state open --label ASSET --search "[asset]: <name>" --json number,title
 ```
 
 Match on the exact title `[asset]: \`<name>\` spell` (name in original casing).
@@ -47,7 +47,7 @@ Match on the exact title `[asset]: \`<name>\` spell` (name in original casing).
 - **No match:**
 
   ```sh
-  gh issue create --title "[asset]: \`<name>\` spell" --label asset --body "<body>"
+  gh issue create --title "[asset]: \`<name>\` spell" --label ASSET --body "<body>"
   ```
 
 - **Match:** update instead of duplicating:
